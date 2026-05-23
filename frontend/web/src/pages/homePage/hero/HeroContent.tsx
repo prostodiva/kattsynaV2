@@ -1,13 +1,13 @@
 
 function HeroContent() {
   return (
-    <section className="min-h-dvh flex flex-col justify-center max-w-container mx-auto">
-      <h1>
-        <span className="font-unitea font-bold block text-4xl sm:text-5xl md:text-8xl lg:text-9xl 2xl:text-[12rem] 2xl:leading-none px-5">
-          Reliable Full-Stack <br /> Engineering
-        </span>
+      <section className="min-h-dvh flex flex-col justify-center px-5 pt-16 max-w-container mx-auto">
+        <h1>
+          <span className="font-unitea font-bold block text-4xl sm:text-5xl md:text-8xl lg:text-9xl 2xl:text-[12rem] 2xl:leading-none px-5">
+            Reliable Full-Stack <br /> Engineering
+          </span>
         </h1>
-    </section>
+      </section>
   );
 }
 export default HeroContent;

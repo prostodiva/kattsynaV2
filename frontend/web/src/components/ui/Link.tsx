@@ -13,7 +13,6 @@ function Link({ to, children, className, activeClassName }: LinkProps) {
     const { navigate, currentPath } = useNavigation();
 
     const classes = classNames(
-        'text-black',
         className,
         currentPath === to && activeClassName
     );
@@ -28,11 +27,9 @@ function Link({ to, children, className, activeClassName }: LinkProps) {
     };
 
     return (
-        <div>
-            <a className={classes} href={to} onClick={handleClick}>
-                {children}
-            </a>
-        </div>
+        <a className={classes} href={to} onClick={handleClick}>
+            {children}
+        </a>
     );
 }
 

@@ -19,7 +19,7 @@ interface NavbarProps {
 
 function Navbar({
                     links,
-                    linkClassName = 'gap-2 my-2 md:mx-4 text-2xl text-gray-400 flex items-center gap-1 whitespace-nowrap',
+                    linkClassName = 'gap-2 md:mx-4 text-2xl text-gray-400 flex items-center gap-1 whitespace-nowrap',
                     activeLinkClassName = 'font-bold text-white',
                     variant = 'horizontal',
                 }: NavbarProps) {
@@ -68,7 +68,7 @@ function Navbar({
 
                       <nav
                         aria-label="Primary navigation"
-                        className={`flex ${variantClasses} items-start gap-10  justify-center`}
+                        className={`flex ${variantClasses} items-start gap-2 justify-center`}
                       >
                         {renderedLinks}
                       </nav>
