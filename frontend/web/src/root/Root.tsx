@@ -4,9 +4,9 @@ import Footer from "../components/Footer.tsx";
 
 function Root() {
   return (
-     <div className="min-h-full flex flex-col">
+     <div className="min-h-dvh flex flex-col bg-surface-page text-text-primary">
       <Header />
-      <main className="grow overflow-hidden" id="main-content">
+      <main className="grow" id="main-content">
         <Outlet />
       </main>
       <Footer />
