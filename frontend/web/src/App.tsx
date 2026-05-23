@@ -4,9 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 import HomePage from "./pages/homePage/";
 
-const StorePage = lazy(() => import('./pages/storePage/'));
-const AboutUsPage = lazy(() => import('./pages/aboutUsPage/'));
-const SupportPage = lazy(() => import('./pages/supportPage/'));
+const ExperiencePage = lazy(() => import('@/pages/experiencePage/'));
+const AboutMePage = lazy(() => import('./pages/aboutMePage/'));
+const SkillsPage = lazy(() => import('@/pages/skillsPage/'));
 const router = createBrowserRouter([
   {
     path: '/',
@@ -17,10 +17,10 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/store',
+        path: '/experience',
         element: (
           <Suspense fallback={<div>Loading...</div>}>
-            <StorePage />
+            <ExperiencePage />
           </Suspense>
         ),
       },
@@ -28,14 +28,14 @@ const router = createBrowserRouter([
         path: '/about',
         element:
           <Suspense fallback={<div>Loading...</div>}>
-            <AboutUsPage />
+            <AboutMePage />
           </Suspense>
       },
       {
-        path: '/support',
+        path: '/skills',
         element:
           <Suspense fallback={<div>Loading...</div>}>
-            <SupportPage />
+            <SkillsPage />
           </Suspense>
       },
     ],

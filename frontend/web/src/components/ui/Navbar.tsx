@@ -27,9 +27,9 @@ function Navbar({
 
                   const defaultLinks: NavLink[] = [
                     { label: 'Home', path: '/' },
-                    { label: 'Store', path: '/store' },
-                    { label: 'About Us', path: '/about' },
-                    { label: 'Support', path: '/support' },
+                    { label: 'Experience', path: '/experience' },
+                    { label: 'Skills', path: '/skills' },
+                    { label: 'About Me', path: '/about' },
                   ];
 
                   const navLinks = links || defaultLinks;

@@ -1,6 +1,6 @@
 import HomeHero from "./hero/HomeHero";
 import ValueSection from "./value/ValueSection";
-import Template from '@/pages/homePage/tailwindTemplate/Template.tsx';
+import AboutMePage from "@/pages/aboutMePage";
 
 
 function HomePage() {
@@ -8,7 +8,7 @@ function HomePage() {
         <>
         <HomeHero />
         <ValueSection />
-          <Template />
+        <AboutMePage />
         </>
     );
 }

@@ -4,9 +4,7 @@ import HeroContent from './HeroContent';
 
 function HomeHero() {
   return (
-    <Section
-      style={{ backgroundColor: '#444793' }}
-    >
+    <Section className="bg-surface-hero">
       <HeroContent />
     </Section>
   );

@@ -4,9 +4,7 @@ import ValuesSectionContent from './ValueSectionContent.tsx';
 
 function ValueSection() {
   return (
-    <Section
-      style={{ backgroundColor: '#9ae7f5' }}
-    >
+    <Section className="bg-surface-section">
       <ValuesSectionContent />
     </Section>
   );

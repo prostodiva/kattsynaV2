@@ -14,7 +14,7 @@ function Header() {
           <img src={logo} alt="Company Logo" className="h-2 md:h-6 w-auto" />
         </Link>
 
-        <div className="absolute w-full left-0 top-0">
+        <div className="absolute w-full left-0 top-0 bg-surface-header">
           <Navbar />
         </div>
       </div>

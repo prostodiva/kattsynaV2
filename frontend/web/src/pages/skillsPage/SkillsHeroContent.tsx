@@ -1,5 +1,5 @@
 
-function SupportHeroContent() {
+function SkillsHeroContent() {
     return (
     <div className="relative min-h-dvh z-10 flex flex-col items-center text-center pt-30 lg:pt-40 xl:pt-40 2xl:pt-40">
       <h1 className="2xl:leading-none">
@@ -11,4 +11,4 @@ function SupportHeroContent() {
   );
 }
 
-export default SupportHeroContent;
+export default SkillsHeroContent;
