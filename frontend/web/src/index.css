@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
-@plugin "@tailwindcss/typography"
 
 html,
 body {
@@ -29,6 +28,23 @@ body {
 @theme {
   --font-unitea: 'UniteaSans', sans-serif;
   --font-goorm: 'GoormSans', sans-serif;
+  --font-stack: 'StackSansNotch', sans-serif;
+  --font-reflow: 'ReflowMonoDemo', sans-serif;
+}
+
+@font-face {
+  font-family: 'RefloMonoDemo';
+  src: url('assets/fonts/reflowMono/Reflow-Mono-Demo.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'StackSansNotch';
+  src: url('./assets/fonts/stackSansNotch/StackSansNotch-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
 }
 
 @font-face {
