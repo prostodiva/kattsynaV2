@@ -19,8 +19,8 @@ interface NavbarProps {
 
 function Navbar({
                     links,
-                    linkClassName = 'gap-2 md:mx-4 text-2xl text-gray-400 flex items-center gap-1 whitespace-nowrap',
-                    activeLinkClassName = 'font-bold text-white',
+                    linkClassName = 'gap-2 md:mx-4 text-2xl flex items-center gap-1 whitespace-nowrap',
+                    activeLinkClassName = 'font-normal text-gray-300',
                     variant = 'horizontal',
                 }: NavbarProps) {
                   const [mobileOpen, setMobileOpen] = useState(false);
@@ -57,12 +57,12 @@ function Navbar({
                       {/*hamburger button for mobile*/}
                       {variant === 'horizontal' && (
                         <button
-                          className="md:hidden ml-auto px-4 py-2 text-2xl font-inter"
+                          className="md:hidden ml-auto px-4 py-2 text-2xl font-goorm font-normal uppercase"
                           onClick={() => setMobileOpen(!mobileOpen)}
                           aria-label="Toggle menu"
                           aria-expanded={mobileOpen}
                         >
-                          MENU
+                          menu
                         </button>
                       )}
 
