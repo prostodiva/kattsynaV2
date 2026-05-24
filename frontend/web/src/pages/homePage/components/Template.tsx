@@ -1,4 +1,4 @@
-import Flexbox from '@/pages/homePage/tailwindTemplate/Flexbox.tsx';
+import Flexbox from '@/pages/homePage/components/Flexbox.tsx';
 import Card from '@/components/ui/Card.tsx';
 import Form from '@/components/ui/Form.tsx';
 

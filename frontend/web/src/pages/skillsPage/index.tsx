@@ -1,4 +1,4 @@
-import SkillsHero from "./SkillsHero";
+import SkillsHero from "./components/SkillsHero.tsx";
 
 
 function SkillsPage() {

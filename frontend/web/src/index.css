@@ -107,7 +107,7 @@ body {
 @theme {
   /* Surface (backgrounds, cards, sections)*/
   --color-surface-page: #4A4849;      /* base page background */
-  --color-surface-hero: #555555;
+  --color-surface-hero: #4A4849;
   --color-surface-section: #212121;   /* dark gray sections*/
   --color-surface-card: #2F2D2E;      /* cards */
   --color-surface-header: #615F60;

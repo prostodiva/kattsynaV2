@@ -1,4 +1,4 @@
-import AboutMeHeroSection from "./hero/AboutMeHeroSection";
+import AboutMeHeroSection from "@/pages/aboutMePage/components/AboutMeHeroSection";
 
 function AboutMePage() {
     return (

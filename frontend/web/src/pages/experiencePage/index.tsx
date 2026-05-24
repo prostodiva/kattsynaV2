@@ -1,4 +1,4 @@
-import ExperienceHero from "./ExperienceHero";
+import ExperienceHero from "./components/ExperienceHero.tsx";
 
 
 function ExperiencePage() {

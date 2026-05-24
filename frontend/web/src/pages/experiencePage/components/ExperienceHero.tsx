@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+import Section from "@/components/Section.tsx";
 import ExperienceHeroContent from "./ExperienceHeroContent.tsx";
 
 function ExperienceHero() {

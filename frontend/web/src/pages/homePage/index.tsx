@@ -1,8 +1,8 @@
-import HomeHero from "./hero/HomeHero";
-import ValueSection from "./value/ValueSection";
+import HomeHero from "./components/HomeHero.tsx";
+import ValueSection from "./components/ValueSection.tsx";
 import AboutMePage from "@/pages/aboutMePage";
-import ExpertiseSection from "@/pages/homePage/expertise/ExpertiseSection.tsx";
-import ProjectSection from "@/pages/homePage/projects/ProjectSection.tsx";
+import ExpertiseSection from "@/pages/homePage/components/ExpertiseSection.tsx";
+import ProjectSection from "@/pages/homePage/components/ProjectSection.tsx";
 
 
 function HomePage() {

@@ -1,6 +1,6 @@
 
 import Section from '@/components/Section.tsx';
-import HeroContent from './HeroContent';
+import HeroContent from './HeroContent.tsx';
 
 function HomeHero() {
   return (
