@@ -11,7 +11,7 @@ function Section({
   return (
     <section
       style={style}
-      className={`relative min-h-dvh flex items-center justify-center pt-16 max-w-container mx-auto ${className || ''}`}
+      className={`relative min-h-dvh flex items-center justify-center max-w-container mx-auto ${className || ''}`}
     >
       {backgroundImage && (
         <picture className="absolute inset-0 z-0 w-full h-full">
