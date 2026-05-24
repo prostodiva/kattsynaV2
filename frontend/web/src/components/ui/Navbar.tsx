@@ -19,14 +19,14 @@ interface NavbarProps {
 
 function Navbar({
                     links,
-                    linkClassName = 'gap-2 md:mx-4 text-2xl flex items-center gap-1 whitespace-nowrap',
+                    linkClassName = 'gap-2 md:mx-4 text-xl flex items-center gap-1 whitespace-nowrap',
                     activeLinkClassName = 'font-normal text-gray-300',
                     variant = 'horizontal',
                 }: NavbarProps) {
                   const [mobileOpen, setMobileOpen] = useState(false);
 
                   const defaultLinks: NavLink[] = [
-                    { label: 'Home', path: '/' },
+                    { label: 'Portfolio', path: '/' },
                     { label: 'Experience', path: '/experience' },
                     { label: 'Skills', path: '/skills' },
                     { label: 'About Me', path: '/about' },
@@ -57,7 +57,7 @@ function Navbar({
                       {/*hamburger button for mobile*/}
                       {variant === 'horizontal' && (
                         <button
-                          className="md:hidden ml-auto px-4 py-2 text-2xl font-goorm font-normal uppercase"
+                          className="md:hidden ml-auto px-4 py-2 text-xl font-goorm font-normal uppercase"
                           onClick={() => setMobileOpen(!mobileOpen)}
                           aria-label="Toggle menu"
                           aria-expanded={mobileOpen}
