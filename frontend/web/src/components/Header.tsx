@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "./ui/Navbar.tsx";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.webp"
 
 function Header() {
   return (

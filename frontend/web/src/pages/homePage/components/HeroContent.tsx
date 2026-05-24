@@ -1,6 +1,6 @@
-import right_cover from "@/assets/bg/right_cover.png"
-import left_cover_desktop from "@/assets/bg/left_cover_desktop.png"
-import left_cover_mobile from "@/assets/bg/left_cover_mobile.png"
+import right_cover from "@/assets/bg/right_cover.webp"
+import left_cover_desktop from "@/assets/bg/left_cover_desktop.webp"
+import left_cover_mobile from "@/assets/bg/left_cover_mobile.webp"
 import Button from "@/components/ui/Button.tsx";
 
 function HeroContent() {
