@@ -65,3 +65,6 @@ MVP packages:
 - CORS - allow the frontend chat UI to talk to backend API/WebSocket; prevent browser security errors
 - dotenv - Loads environment variables from a .env file
 - zod - A validation library for checking and typing data; prevents bad input from breaking backend
+
+[MVP 1](../mvp/01-mvp.md)
+
