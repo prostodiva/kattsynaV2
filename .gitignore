@@ -64,3 +64,73 @@ Thumbs.db
 *.tgz
 *.tmp
 *.temp
+
+
+# =========================
+# Backend dependencies
+# =========================
+backend/node_modules/
+
+# =========================
+# Backend build outputs
+# =========================
+backend/dist/
+backend/build/
+backend/.tsbuildinfo
+
+# =========================
+# Backend environment files
+# =========================
+backend/.env
+backend/.env.local
+backend/.env.development
+backend/.env.production
+backend/.env.test
+
+# =========================
+# Backend logs
+# =========================
+backend/logs/
+backend/*.log
+
+# =========================
+# Databases
+# =========================
+backend/*.sqlite
+backend/*.sqlite3
+backend/*.db
+
+# =========================
+# ChromaDB / vector storage
+# =========================
+backend/chroma/
+backend/data/chroma/
+backend/vector-db/
+
+# =========================
+# Ollama generated/cache files
+# =========================
+backend/tmp/
+backend/temp/
+backend/cache/
+
+# =========================
+# Uploaded/generated files
+# =========================
+backend/uploads/
+backend/generated/
+
+# =========================
+# Testing
+# =========================
+backend/coverage/
+
+# =========================
+# LangChain / AI artifacts
+# =========================
+backend/.langchain/
+
+# =========================
+# TypeScript incremental builds
+# =========================
+*.tsbuildinfo
