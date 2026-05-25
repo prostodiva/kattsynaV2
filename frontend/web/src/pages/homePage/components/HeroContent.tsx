@@ -5,8 +5,12 @@ import Button from "@/components/ui/Button.tsx";
 
 function HeroContent() {
 
+    const handleGetInTouch = () => {
+        //https://www.linkedin.com/in/margarita-kattsyna/
+        console.log("get in touch clicked")
+    }
   return (
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full min-h-dvh">
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-dvh">
 
           {/*Left side - always visible*/}
           <div className="relative items-end justify-center overflow-x-hidden">
@@ -15,21 +19,21 @@ function HeroContent() {
                   <img src={left_cover_mobile} alt="" className="w-full h-full object-cover" />
               </picture>
 
-              <div className="absolute top-56 lg:top-96 xl:top-112 2xl:top-188 left-5 right-5 2xl:left-10">
+              <div className="absolute top-44 md:top-80 lg:top-96 xl:top-112 2xl:top-200 left-5 right-5 md:left-8 2xl:left-10">
                   <h1>
                   <span className="font-unitea font-bold block text-6xl 2xl:text-8xl leading-none">
-                    Reliable<br className="md:hidden" />
-                      {" "}Full-Stack<br />
-                        Engineering
+                    Reliable <br className="md:hidden" />
+                      Full-Stack<br />
+                      Engineering
                   </span>
                   </h1>
-                  <p className="font-goorm font-normal text-text-secondary pt-8 text-xl md:text-2xl leading-tight lg:leading-none max-w-2xl">
+                  <p className="font-goorm font-normal text-text-secondary pt-8 text-xl 2xl:text-2xl leading-tight max-w-2xl">
                       A Senior who takes full responsibility for the stack, so your team can
                       focus on business goals. Ensuring security, high speed, and
                       predictable performance of your application
                   </p>
 
-                  <div className="pt-8">
+                  <div className="pt-8" onClick={handleGetInTouch}>
                       <Button variant="primary" rounded>Get In Touch</Button>
                   </div>
 
@@ -37,7 +41,7 @@ function HeroContent() {
           </div>
 
           {/*Right side - hidden on mobile*/}
-          <div className="relative h-dvh hidden md:block">
+          <div className="relative h-dvh hidden lg:block">
               <img src={right_cover} alt="" className="absolute inset-0 h-full w-full object-cover" />
           </div>
       </div>

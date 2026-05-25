@@ -19,8 +19,8 @@ interface NavbarProps {
 
 function Navbar({
                     links,
-                    linkClassName = 'gap-2 md:mx-4 text-xl flex items-center gap-1 whitespace-nowrap',
-                    activeLinkClassName = 'font-normal text-gray-300',
+                    linkClassName = 'gap-2 md:mx-4 text-2xl font-goorm font-normal brand-navbar flex items-center gap-1 whitespace-nowrap',
+                    activeLinkClassName = 'bg-brand-highlight px-3 py-1 rounded-sm',
                     variant = 'horizontal',
                 }: NavbarProps) {
                   const [mobileOpen, setMobileOpen] = useState(false);

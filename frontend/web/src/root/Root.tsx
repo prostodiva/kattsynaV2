@@ -6,7 +6,7 @@ function Root() {
   return (
      <div className="min-h-dvh flex flex-col bg-surface-page text-text-primary">
       <Header />
-      <main className="grow" id="main-content">
+      <main className="grow overflow-hidden" id="main-content">
         <Outlet />
       </main>
       <Footer />

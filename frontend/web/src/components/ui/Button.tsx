@@ -27,9 +27,9 @@ function Button({ children, variant = 'primary', rounded, outline, active, type 
     const buttonClasses = classNames(
         "flex justify-center items-center text-center whitespace-nowrap transition-colors duration-200",
         {
-            'h-14 px-12 xl:px-66 bg-button-primary font-goorm font-bold text-text-ternary text-2xl uppercase hover:bg-brand-300 hover:text-brand-700':
+            'h-18 px-12 lg:px-36 xl:px-66 bg-button-primary font-goorm font-medium text-text-ternary text-2xl uppercase hover:bg-brand-300 hover:text-brand-700':
                 variant === 'primary' && !backgroundImage,
-            'h-14 px-10 rounded-sm bg-brand-300 text-brand-600 font-bold hover:bg-accent-500 hover:text-white':
+            'h-12 px-4 bg-button-primary font-goorm font-medium text-text-ternary text-xl uppercase hover:bg-brand-300 hover:text-brand-700':
                 variant === 'secondary' && !active && !backgroundImage,
             'py-6 px-8 bg-surface-card text-white':
                 variant === 'secondary' && active && !backgroundImage,
