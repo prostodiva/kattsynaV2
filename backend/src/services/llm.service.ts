@@ -23,6 +23,7 @@ export async function streamLLMResponse(
             const token = chunk.content;
 
             if (typeof token === "string") {
+                process.stdout.write(token);
                 onToken(token);
             }
         }

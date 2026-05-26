@@ -1,3 +1,7 @@
+/*
+* Splits large text into chunks
+* */
+
 export function chunkText(text: string, size = 500) {
     const chunks: string[] = [];
 

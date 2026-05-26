@@ -1,3 +1,9 @@
+/*
+*
+* Inject retrieved context into prompt.
+*
+* */
+
 export function buildPrompt(query: string, chunks: string[]) {
     return `
 You are NOT an assistant.

@@ -1,3 +1,7 @@
+/*
+* Creates Chroma client; returns collection
+* */
+
 import { ChromaClient } from "chromadb";
 
 export const chroma = new ChromaClient({

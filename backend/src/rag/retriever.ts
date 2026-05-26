@@ -1,3 +1,9 @@
+/*
+*
+* Retrieve relevant chunks from Chroma.
+*
+* */
+
 import { getCollection } from "../db/chroma.js";
 import { embedText } from "../services/embedding.service.js";
 

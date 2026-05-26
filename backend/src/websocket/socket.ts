@@ -41,17 +41,12 @@ export function createWebSocketServer(server: Server) {
                 await streamLLMResponse(
                     prompt,
                     (token) => {
-                        const cleanToken =
-                            typeof token === "string"
-                                ? token.replace(/\s+/g, " ")
-                                : "";
+                        if (typeof token !== "string") return;
 
-                        if (cleanToken.length > 0) {
-                            socket.send(JSON.stringify({
-                                type: "stream",
-                                content: cleanToken,
-                            }));
-                        }
+                        socket.send(JSON.stringify({
+                            type: "stream",
+                            content: token,
+                        }));
                     },
                     () => {
                         isStreaming = false;

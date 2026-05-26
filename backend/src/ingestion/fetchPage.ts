@@ -1,5 +1,13 @@
 import { chromium } from "playwright";
 
+function cleanText(text: string) {
+    return text
+        .replace(/©.*$/gm, "")
+        .replace(/GET IN TOUCH|DOWNLOAD MY RESUME|Send Message/g, "")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+}
+
 export async function fetchPageText(url: string) {
     const browser = await chromium.launch({
         headless: true,
@@ -11,12 +19,14 @@ export async function fetchPageText(url: string) {
         waitUntil: "networkidle",
     });
 
-    // extract visible text
-    const text = await page.evaluate(() => {
-        return document.body.innerText;
+    const rawText = await page.evaluate(() => {
+        const main =
+            document.querySelector("main") ||
+            document.querySelector("#root");
+        return main?.innerText || document.body.innerText;
     });
 
-    await browser.close();
 
-    return text;
+
+    return cleanText(rawText);
 }

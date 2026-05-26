@@ -65,6 +65,31 @@ MVP packages:
 - CORS - allow the frontend chat UI to talk to backend API/WebSocket; prevent browser security errors
 - dotenv - Loads environment variables from a .env file
 - zod - A validation library for checking and typing data; prevents bad input from breaking backend
+- Playwright Scraper
 
 [MVP 1](../mvp/01-mvp.md)
 
+# Upgrade for later:
+
+
+1. semantic chunking
+2. metadata filtering
+3. multi-page ingestion
+4. batching embeddings
+5. prompt compression
+6. reranking retrieval
+7. caching embeddings
+
+
+* smart DOM extraction (not just innerText)
+* section-based scraping (About / Projects / Skills separately)
+* semantic chunking (not fixed split)
+* metadata-aware retrieval (filter by section)
+
+
+fetchPage
+remove hardcoded strings: 
+GET IN TOUCH
+DOWNLOAD MY RESUME
+Send Message
+- replace with semantic filtering.
