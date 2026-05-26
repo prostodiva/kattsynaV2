@@ -1,49 +1,63 @@
 import { Server } from "http";
-import { WebSocket, WebSocketServer } from 'ws';
+import { WebSocket, WebSocketServer } from "ws";
 import type { ServerMessage, ClientMessage } from "../types/message.js";
+import { runRAG } from "../../src/services/rag.service.js";
 
 export function createWebSocketServer(server: Server) {
     const wss = new WebSocketServer({ server });
+
     wss.on("connection", (socket: WebSocket) => {
         console.log("client connected");
 
-        socket.on("message", (rawMessage) => {
+        socket.on("message", async (rawMessage) => {
             try {
                 const message = JSON.parse(
                     rawMessage.toString()
                 ) as ClientMessage;
 
                 if (message.type === "ping") {
-                    const response: ServerMessage = {
-                        type: "pong"
-                    };
-
-                    socket.send(JSON.stringify(response));
+                    socket.send(
+                        JSON.stringify({ type: "pong" } as ServerMessage)
+                    );
                     return;
                 }
 
-
                 if (message.type === "message") {
-                    const response: ServerMessage = {
-                        type: "stream",
-                        content: `Echo: ${message.content}`,
-                    };
+                    await runRAG(
+                        message.content,
 
-                    socket.send(JSON.stringify(response));
-                    const endMessage: ServerMessage = {
-                        type: "stream_end",
-                    };
+                        // onToken
+                        (token) => {
+                            socket.send(JSON.stringify({
+                                type: "stream",
+                                content: token,
+                            }));
+                        },
 
-                    socket.send(JSON.stringify(endMessage));
+                        // onEnd
+                        () => {
+                            socket.send(JSON.stringify({
+                                type: "stream_end",
+                            }));
+                        },
+
+                        // onError
+                        (err) => {
+                            socket.send(JSON.stringify({
+                                type: "error",
+                                message: "RAG failed",
+                            }));
+                        }
+                    );
                 }
 
             } catch (error) {
-                const errorMessage: ServerMessage = {
-                    type: "error",
-                    message: "Invalid websocket message",
-                };
-
-                socket.send(JSON.stringify(errorMessage));
+                socket.send(
+                    JSON.stringify({
+                        type: "error",
+                        message: "Invalid websocket message",
+                    } as ServerMessage)
+                );
             }
         });
 

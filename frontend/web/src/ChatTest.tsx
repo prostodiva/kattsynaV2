@@ -7,8 +7,10 @@ export default function ChatTest() {
     const [input, setInput] = useState("");
 
     useEffect(() => {
-        const socket = new WebSocket("ws://localhost:3001");
+        // prevent double connection in React StrictMode
+        if (socketRef.current?.readyState === WebSocket.OPEN) return;
 
+        const socket = new WebSocket("ws://localhost:3001");
         socketRef.current = socket;
 
         socket.onopen = () => {
@@ -23,38 +25,41 @@ export default function ChatTest() {
             console.log("Disconnected");
         };
 
+        socket.onerror = (err) => {
+            console.log("Socket error", err);
+        };
+
         return () => {
-            socket.close();
+            // IMPORTANT: only close if actually open
+            if (socket.readyState === WebSocket.OPEN) {
+                socket.close();
+            }
         };
     }, []);
 
     function sendMessage() {
-        if (!input.trim()) return;
+        const socket = socketRef.current;
 
-        socketRef.current?.send(
-            JSON.stringify({
-                type: "message",
-                content: input,
-            })
-        );
+        if (!socket || socket.readyState !== WebSocket.OPEN) {
+            console.warn("Socket not ready:", socket?.readyState);
+            return;
+        }
 
-        setInput(""); // optional: clear after send
+        socket.send(JSON.stringify({
+            type: "message",
+            content: input,
+        }));
     }
 
     return (
         <div className="space-y-2">
             <input
-                type="text"
                 className="text-black border px-2 py-1"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type message..."
             />
 
-            <button
-                onClick={sendMessage}
-                className="px-3 py-1 bg-blue-500 text-white"
-            >
+            <button onClick={sendMessage}>
                 Send Message
             </button>
         </div>
