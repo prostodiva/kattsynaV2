@@ -14,10 +14,8 @@ Answer questions accurately using ONLY my website content.
 
 ### Content Ingestion Pipeline (indexing pipeline)
 Website Pages
-↓
-Axios/fetch
-↓
-Cheerio HTML parsing
+↓ 
+Playwright Scraper
 ↓
 Clean text extraction
 ↓
@@ -61,18 +59,16 @@ MVP packages:
 - nomic-embed-text - embedding model
 - Chroma db - vector db to build AI apps
 - Cheerio - parses and extracts structured text from HTML documents
-- Axios - fetching HTML pages before parsing them
+- Axios - fetching HTML pages before parsing them (replaced by - Playwright Scraper)
 - CORS - allow the frontend chat UI to talk to backend API/WebSocket; prevent browser security errors
 - dotenv - Loads environment variables from a .env file
 - zod - A validation library for checking and typing data; prevents bad input from breaking backend
-- Playwright Scraper
 
 [MVP 1](../mvp/01-mvp.md)
 
 # Upgrade for later:
 
-
-1. semantic chunking
+1. [semantic chunking](./semantic-chunking.md)
 2. metadata filtering
 3. multi-page ingestion
 4. batching embeddings
