@@ -8,7 +8,8 @@ function AboutMeHeroContent() {
           </span>
         </h1>
           <p>
-              Margarita is a Full-Stack Engineer with a strong focus on building scalable and high-performance web applications. She has experience working with Node.js, React, and cloud-based architectures. She enjoys designing clean backend systems, optimizing API performance, and integrating AI features into modern applications. In her projects, she emphasizes security, maintainability, and user experience. Recently, she has been working on AI-powered chat systems and vector-based search engines.
+              I specialize in building end-to-end full-stack systems - reliable, scalable, and architected before a single line is written.
+              I take full ownership of features so your team can release high-quality products on time and without chaos.
           </p>
       </div>
   );

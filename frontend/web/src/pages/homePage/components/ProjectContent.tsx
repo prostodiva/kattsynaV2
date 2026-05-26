@@ -7,6 +7,7 @@ function ProjectContent() {
           Project <br /> Section
         </span>
         </h1>
+        <p>My Best Projects: nfl-vacation.pages.dev - Full-Stack Application; eu-rika.com – Web Application; AI Assistant - Scheduling & Productivity Full-Stack Application</p>
     </div>
   );
 }
