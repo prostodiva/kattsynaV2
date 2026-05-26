@@ -105,3 +105,37 @@ Ollama + LangChain
 ChromaDB 
 
 # Content Ingestion Pipeline
+goal: replace the fake data (seed-chroma.ts)
+Website → fetch → parse → clean → chunk → embed → store in Chroma
+
+### Crawler
+[crawler](../../src/ingestion/crawler.ts)
+
+### Extractor (clean HTML → text)
+[extractor](../../src/ingestion/extractor.ts)
+
+### Chunker
+[chunker](../../src/ingestion/chunker.ts)
+
+### Intexer
+[indexer](../../src/ingestion/indexer.ts)
+
+run
+````
+npx tsx src/scripts/reset-chroma.ts 
+npx tsx src/scripts/run-ingestion.ts
+npx tsx src/scripts/test-retrieval.ts
+npx tsx src/scripts/debug-chroma.ts
+````
+
+````
+const ws = new WebSocket("ws://localhost:3001");
+ws.onmessage = (e) => console.log("MSG:", e.data);
+ws.onopen = () => {
+  ws.send(JSON.stringify({
+    type: "message",
+    content: "What do you do?"
+  }));
+};
+````
+

@@ -1,7 +1,8 @@
 import { Server } from "http";
 import { WebSocket, WebSocketServer } from "ws";
-import type { ServerMessage, ClientMessage } from "../types/message.js";
-import { runRAG } from "../../src/services/rag.service.js";
+import { buildPrompt } from "../rag/prompt.js";
+import { retrieveContext } from "../rag/retriever.js";
+import { streamLLMResponse } from "../services/llm.service.js";
 
 export function createWebSocketServer(server: Server) {
     const wss = new WebSocketServer({ server });
@@ -9,55 +10,72 @@ export function createWebSocketServer(server: Server) {
     wss.on("connection", (socket: WebSocket) => {
         console.log("client connected");
 
+        let isStreaming = false;
+
         socket.on("message", async (rawMessage) => {
+            const message = JSON.parse(rawMessage.toString());
+
+            if (message.type !== "message") return;
+
+            if (isStreaming) {
+                socket.send(JSON.stringify({
+                    type: "error",
+                    message: "Already processing request",
+                }));
+                return;
+            }
+
+            isStreaming = true;
+
             try {
-                const message = JSON.parse(
-                    rawMessage.toString()
-                ) as ClientMessage;
+                // 1. retrieve context
+                const chunks = await retrieveContext(message.content);
 
-                if (message.type === "ping") {
-                    socket.send(
-                        JSON.stringify({ type: "pong" } as ServerMessage)
-                    );
-                    return;
-                }
+                // 2. build prompt
+                const prompt = buildPrompt(message.content, chunks);
 
-                if (message.type === "message") {
-                    await runRAG(
-                        message.content,
+                console.log("CHUNKS:", chunks);
+                console.log("PROMPT:", prompt);
 
-                        // onToken
-                        (token) => {
+                // 3. stream to LLM
+                await streamLLMResponse(
+                    prompt,
+                    (token) => {
+                        const cleanToken =
+                            typeof token === "string"
+                                ? token.replace(/\s+/g, " ")
+                                : "";
+
+                        if (cleanToken.length > 0) {
                             socket.send(JSON.stringify({
                                 type: "stream",
-                                content: token,
-                            }));
-                        },
-
-                        // onEnd
-                        () => {
-                            socket.send(JSON.stringify({
-                                type: "stream_end",
-                            }));
-                        },
-
-                        // onError
-                        (err) => {
-                            socket.send(JSON.stringify({
-                                type: "error",
-                                message: "RAG failed",
+                                content: cleanToken,
                             }));
                         }
-                    );
-                }
+                    },
+                    () => {
+                        isStreaming = false;
 
-            } catch (error) {
-                socket.send(
-                    JSON.stringify({
-                        type: "error",
-                        message: "Invalid websocket message",
-                    } as ServerMessage)
+                        socket.send(JSON.stringify({
+                            type: "stream_end",
+                        }));
+                    },
+                    (err) => {
+                        isStreaming = false;
+
+                        socket.send(JSON.stringify({
+                            type: "error",
+                            message: "LLM failed",
+                        }));
+                    }
                 );
+            } catch (err) {
+                isStreaming = false;
+
+                socket.send(JSON.stringify({
+                    type: "error",
+                    message: "Server error",
+                }));
             }
         });
 

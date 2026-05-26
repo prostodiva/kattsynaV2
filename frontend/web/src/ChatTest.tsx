@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 export default function ChatTest() {
     const socketRef = useRef<WebSocket | null>(null);
     const [input, setInput] = useState("");
+    const [output, setOutput] = useState("");
 
     useEffect(() => {
-        // prevent double connection in React StrictMode
         if (socketRef.current?.readyState === WebSocket.OPEN) return;
 
         const socket = new WebSocket("ws://localhost:3001");
@@ -18,7 +18,19 @@ export default function ChatTest() {
         };
 
         socket.onmessage = (event) => {
-            console.log("Received:", event.data);
+            const msg = JSON.parse(event.data);
+
+            if (msg.type === "stream") {
+                setOutput((prev) => prev + msg.content);
+            }
+
+            if (msg.type === "stream_end") {
+                setOutput((prev) => prev + "\n");
+            }
+
+            if (msg.type === "error") {
+                console.error(msg.message);
+            }
         };
 
         socket.onclose = () => {
@@ -30,7 +42,6 @@ export default function ChatTest() {
         };
 
         return () => {
-            // IMPORTANT: only close if actually open
             if (socket.readyState === WebSocket.OPEN) {
                 socket.close();
             }
@@ -44,6 +55,8 @@ export default function ChatTest() {
             console.warn("Socket not ready:", socket?.readyState);
             return;
         }
+
+        setOutput("");
 
         socket.send(JSON.stringify({
             type: "message",
@@ -62,6 +75,10 @@ export default function ChatTest() {
             <button onClick={sendMessage}>
                 Send Message
             </button>
+
+            <div className="mt-4 whitespace-pre-wrap text-black">
+                {output}
+            </div>
         </div>
     );
 }
