@@ -4,9 +4,6 @@ type ButtonVariant =
   | 'primary'
   | 'secondary'
   | 'ternary'
-  | 'add'
-  | 'arrowLeft'
-  | 'arrowRight';
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps {
@@ -32,11 +29,7 @@ function Button({ children, variant = 'primary', rounded, outline, active, type 
             'h-12 px-4 bg-button-primary font-goorm font-medium text-text-ternary text-xl uppercase hover:bg-brand-300 hover:text-brand-700':
                 variant === 'secondary' && !active && !backgroundImage,
             'py-6 px-8 bg-surface-card text-white':
-                variant === 'secondary' && active && !backgroundImage,
-            'py-4 px-6 border bg-danger text-white hover:bg-white hover:text-black':
-                variant === 'add' && !backgroundImage,
-            'p-4 px-12 bg-transparent':
-                variant === 'arrowLeft' || variant === 'arrowRight',
+                variant === 'ternary' && active && !backgroundImage,
             'rounded-xs': rounded,
             'bg-white': outline && !backgroundImage,
             'opacity-50 cursor-not-allowed': disabled,
