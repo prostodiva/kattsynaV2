@@ -5,7 +5,8 @@ Answer questions accurately using ONLY my website content.
 The goal:   
 Frontend → WebSocket → Backend → Chroma → Ollama → streamed response
 
-### Step 1. Run a simple server
+### Step 1. Run a simple server 
+[server](../../src/server.ts)
 - create .env & .env.example
 - load env(dotenv)
 - import express & cors
@@ -20,6 +21,7 @@ Frontend → WebSocket → Backend → Chroma → Ollama → streamed response
 add:
 - WebSocket server
 - echo messages first
+[socket](../../src/websocket/socket.ts)
 
 ### Step 3: Add “fake RAG” 
 confirm that LLM streaming works:

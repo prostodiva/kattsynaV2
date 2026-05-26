@@ -2,6 +2,7 @@ import right_cover from "@/assets/bg/right_cover.webp"
 import left_cover_desktop from "@/assets/bg/left_cover_desktop.webp"
 import left_cover_mobile from "@/assets/bg/left_cover_mobile.webp"
 import Button from "@/components/ui/Button.tsx";
+import ChatTest from "@/ChatTest.tsx";
 
 function HeroContent() {
 
@@ -20,6 +21,7 @@ function HeroContent() {
               </picture>
 
               <div className="absolute top-44 md:top-80 lg:top-96 xl:top-112 2xl:top-200 left-5 right-5 md:left-8 2xl:left-10">
+                  <ChatTest />
                   <h1>
                   <span className="font-unitea font-bold block text-6xl 2xl:text-8xl leading-none">
                     Reliable <br className="md:hidden" />
@@ -34,7 +36,7 @@ function HeroContent() {
                   </p>
 
                   <div className="pt-8" onClick={handleGetInTouch}>
-                      <Button variant="primary" rounded>Get In Touch</Button>
+                      <Button variant="primary">Get In Touch</Button>
                   </div>
 
               </div>
