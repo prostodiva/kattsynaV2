@@ -24,13 +24,13 @@ function Button({ children, variant = 'primary', rounded, outline, active, type 
     const buttonClasses = classNames(
         "flex justify-center items-center text-center whitespace-nowrap transition-colors duration-200",
         {
-            'h-18 px-12 lg:px-36 xl:px-66 bg-button-primary font-goorm font-medium text-text-ternary text-2xl uppercase hover:bg-brand-300 hover:text-brand-700':
+            'h-18 xl:h-12 2xl:h-18 px-12 lg:px-36 xl:px-40 2xl:px-66 bg-button-primary font-goorm font-normal text-text-ternary text-2xl xl:text-xl uppercase hover:bg-brand-300 hover:text-brand-700':
                 variant === 'primary' && !backgroundImage,
-            'h-12 px-4 bg-button-primary font-goorm font-medium text-text-ternary text-xl uppercase hover:bg-brand-300 hover:text-brand-700':
+            'h-8 2xl:h-12 px-2 2xl:px-4 bg-button-primary font-goorm font-medium text-text-ternary text-sm 2xl:text-xl uppercase hover:bg-brand-300 hover:text-brand-700':
                 variant === 'secondary' && !active && !backgroundImage,
             'py-6 px-8 bg-surface-card text-white':
                 variant === 'ternary' && active && !backgroundImage,
-            'rounded-xs': rounded,
+            'rounded-sm': rounded,
             'bg-white': outline && !backgroundImage,
             'opacity-50 cursor-not-allowed': disabled,
         },
@@ -55,7 +55,7 @@ function Button({ children, variant = 'primary', rounded, outline, active, type 
       style={backgroundStyle}
       onClick={onClick}
     >
-      <span>{children}</span>
+      {children}
     </button>
   );
 }

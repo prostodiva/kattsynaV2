@@ -19,8 +19,8 @@ interface NavbarProps {
 
 function Navbar({
                     links,
-                    linkClassName = 'gap-2 md:mx-4 text-2xl font-goorm font-normal brand-navbar flex items-center gap-1 whitespace-nowrap',
-                    activeLinkClassName = 'bg-brand-highlight px-3 py-1 rounded-sm',
+                    linkClassName = 'md:mx-4 2xl:text-2xl font-goorm font-normal brand-navbar flex items-center gap-1 whitespace-nowrap',
+                    activeLinkClassName = 'bg-brand-highlight px-3 rounded-sm',
                     variant = 'horizontal',
                 }: NavbarProps) {
                   const [mobileOpen, setMobileOpen] = useState(false);
@@ -68,7 +68,7 @@ function Navbar({
 
                       <nav
                         aria-label="Primary navigation"
-                        className={`flex ${variantClasses} items-start gap-2 justify-center`}
+                        className={`flex ${variantClasses} items-start gap-1 justify-center`}
                       >
                         {renderedLinks}
                       </nav>

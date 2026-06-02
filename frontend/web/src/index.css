@@ -11,12 +11,7 @@ body {
   min-height: 100%;
 }
 
- /** { outline: 1px solid red; }*/
-
-
-  input, textarea, select, button {
-    @apply rounded-xl;
-  }
+ * { outline: 1px solid red; }
 
 @theme {
   --font-unitea: 'UniteaSans', sans-serif;

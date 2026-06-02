@@ -31,7 +31,7 @@ export function ChatInput({ disabled, onSend }: Props) {
 
     return (
         <div className="p-2">
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
         <textarea
             value={input}
             disabled={disabled}
@@ -47,6 +47,7 @@ export function ChatInput({ disabled, onSend }: Props) {
                     variant="secondary"
                     onClick={handleSend}
                     disabled={disabled || !input.trim() }
+                    rounded
                 >
                     Send
                 </Button>
