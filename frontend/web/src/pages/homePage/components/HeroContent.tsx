@@ -13,7 +13,7 @@ function HeroContent() {
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-dvh">
 
           {/*Left side - always visible*/}
-          <div className="relative items-end justify-center overflow-x-hidden">
+          <div className="relative items-end justify-center overflow-hidden">
               <picture className="absolute inset-0 w-full h-full">
                   <source media="(min-width: 768px)" srcSet={left_cover_desktop} />
                   <img src={left_cover_mobile} alt="" className="w-full h-full object-cover translate-y-15" />
