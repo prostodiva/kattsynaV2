@@ -21,13 +21,13 @@ function HeroContent() {
 
               <div className="absolute top-44 md:top-80 lg:top-96 xl:top-140 2xl:top-200 left-5 right-5 md:left-8 2xl:left-10">
                 <h1>
-                <span className="font-unitea font-bold block text-6xl 2xl:text-8xl leading-none">
+                <span className="font-unitea font-bold block text-6xl 2xl:text-9xl leading-none">
                 Reliable <br className="md:hidden" />
                     Full-Stack<br />
                     Engineering
                 </span>
                 </h1>
-                <p className="font-goorm font-normal text-text-secondary pt-5 pb-5 text-2xl xl:text-sm 2xl:text-2xl leading-tight max-w-sm md:max-w-md lg:max-w-sm xl:max-w-md 2xl:max-w-2xl">
+                <p className="font-goorm font-normal text-text-secondary pt-5 pb-5 text-2xl xl:text-sm 2xl:text-xl leading-tight max-w-sm md:max-w-md lg:max-w-sm xl:max-w-md 2xl:max-w-xl">
                     A Senior who takes full responsibility for the stack, so your team can
                     focus on business goals. Ensuring security, high speed, and
                     predictable performance of your application
