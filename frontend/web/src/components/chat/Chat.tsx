@@ -12,7 +12,7 @@ export function Chat() {
     } = useChat();
 
     return (
-        <div className="flex h-80 w-100 flex-col rounded-md bg-surface-dark-card">
+        <div className="flex h-80 w-72 xl:h-120 xl:w-100 flex-col rounded-md overflow-hidden bg-surface-dark-card">
             <ChatHeader/>
 
             <ChatMessages

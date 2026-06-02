@@ -47,12 +47,17 @@ function HeroContent() {
           <div className="relative h-dvh hidden lg:block">
               <img src={right_cover} alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-              <div className="absolute bottom-8 right-8 z-20">
-                  <div
-                      className={`transition-all duration-300 ${
-                          isChatOpen ? "opacity-0 scale-95 pointer-events-none" : "opacity-100"
-                      }`}
-                  >
+                <div className={`absolute inset-0 backdrop-blur-xs transition-opacity duration-100 ${
+                    isChatOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`} />
+
+                <div className="absolute bottom-8 right-12 z-20">
+                    <div
+                        className={`transition-all duration-300 ${
+                            isChatOpen ? "opacity-0 scale-95 pointer-events-none" : "opacity-100"
+                        }`} 
+                    >
+                    
                       <Button
                           type="button"
                           variant="secondary"

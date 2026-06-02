@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-
 import type { ChatMessage as ChatMessageType } from "../../types/chat.ts";
 
 import { ChatMessage } from "./ChatMessage";
@@ -9,19 +7,7 @@ interface Props {
     isResponding: boolean;
 }
 
-export function ChatMessages({
-                                 messages,
-                                 isResponding,
-                             }: Props) {
-    const bottomRef =
-        useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        bottomRef.current?.scrollIntoView({
-            behavior: "smooth",
-        });
-    }, [messages, isResponding]);
-
+export function ChatMessages({ messages, isResponding }: Props) {
     return (
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.length === 0 ? (
@@ -43,8 +29,6 @@ export function ChatMessages({
                     Thinking...
                 </div>
             )}
-
-            <div ref={bottomRef} />
         </div>
     );
 }
