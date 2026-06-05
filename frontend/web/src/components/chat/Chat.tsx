@@ -1,29 +1,21 @@
-import { useChat } from "../../hooks/useChat.ts";
-import { ChatHeader } from "./ChatHeader";
-import { ChatMessages } from "./ChatMessages.tsx";
-import { ChatInput } from "./ChatInput";
+import { useChat } from '../../hooks/useChat.ts';
+import { ChatHeader } from './ChatHeader';
+import { ChatMessages } from './ChatMessages.tsx';
+import { ChatInput } from './ChatInput';
 
 export function Chat() {
-    const {
-        messages,
-        status,
-        isResponding,
-        sendMessage,
-    } = useChat();
+  const { messages, status, isResponding, sendMessage } = useChat();
 
-    return (
-        <div className="flex h-80 w-72 xl:h-120 xl:w-100 flex-col rounded-md overflow-hidden bg-surface-dark-card">
-            <ChatHeader/>
+  return (
+    <div className="flex h-80 w-72 xl:h-120 xl:w-100 flex-col rounded-md overflow-hidden bg-surface-dark-card">
+      <ChatHeader />
 
-            <ChatMessages
-                messages={messages}
-                isResponding={isResponding}
-            />
+      <ChatMessages messages={messages} isResponding={isResponding} />
 
-            <ChatInput
-                disabled={ status !== "open" || isResponding }
-                onSend={sendMessage}
-            />
-        </div>
-    );
+      <ChatInput
+        disabled={status !== 'open' || isResponding}
+        onSend={sendMessage}
+      />
+    </div>
+  );
 }

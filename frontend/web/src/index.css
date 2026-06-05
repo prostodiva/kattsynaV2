@@ -11,7 +11,9 @@ body {
   min-height: 100%;
 }
 
- /* * { outline: 1px solid red; } */
+* {
+  outline: 1px solid red;
+}
 
 @theme {
   --font-unitea: 'UniteaSans', sans-serif;
@@ -27,10 +29,10 @@ body {
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'StackSansNotch';
-  src: url('./assets/fonts/stackSansNotch/StackSansNotch-SemiBold.woff') format('woff');
+  src: url('./assets/fonts/stackSansNotch/StackSansNotch-SemiBold.woff')
+    format('woff');
   font-weight: 600;
   font-style: normal;
 }
@@ -72,7 +74,8 @@ body {
 
 @font-face {
   font-family: 'UniteaSans';
-  src: url('./assets/fonts/uniteaSans/UniteaSans-RegularItalic.woff') format('woff');
+  src: url('./assets/fonts/uniteaSans/UniteaSans-RegularItalic.woff')
+    format('woff');
   font-weight: 400;
   font-style: italic;
 }
@@ -98,30 +101,29 @@ body {
   font-style: normal;
 }
 
-
 @theme {
   /* Surface (backgrounds, cards, sections)*/
-  --color-surface-page: #4A4849;      /* base page background */
-  --color-surface-hero: #4A4849;
-  --color-surface-section: #212121;   /* dark gray sections*/
-  --color-surface-card: #2F2D2E;      /* cards */
-  --color-surface-header: #615F60;
-  --color-surface-dark-card: #4A4849;
-  --color-surface-yellow: #FACC23;   /*yellow sections*/
-  --color-surface-overlay: #252840;   /* tooltips, dropdowns */
+  --color-surface-page: #4a4849; /* base page background */
+  --color-surface-hero: #4a4849;
+  --color-surface-section: #212121; /* dark gray sections*/
+  --color-surface-card: #2f2d2e; /* cards */
+  --color-surface-header: #615f60;
+  --color-surface-dark-card: #4a4849;
+  --color-surface-yellow: #facc23; /*yellow sections*/
+  --color-surface-overlay: #252840; /* tooltips, dropdowns */
 
   /* Text */
-  --color-text-primary: #FFFEFB;  /* title */
-  --color-text-secondary: #FDFEFF; /* p */
-  --color-text-ternary: #4A4849;  /* on yellow button */
+  --color-text-primary: #fffefb; /* title */
+  --color-text-secondary: #fdfeff; /* p */
+  --color-text-ternary: #4a4849; /* on yellow button */
 
   /* Brand - identity color, CTAs, links, highlights*/
-  --color-brand-navbar: #FDFEFF;
-  --color-brand-highlight: #4A4849;
+  --color-brand-navbar: #fdfeff;
+  --color-brand-highlight: #4a4849;
   --color-brand-focus: #f1eeee;
 
   /* Buttons */
-  --color-button-primary: #FACC23;
+  --color-button-primary: #facc23;
 
   /* Semantic */
   --color-success-light: #d3f9d8;

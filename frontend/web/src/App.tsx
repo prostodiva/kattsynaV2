@@ -1,8 +1,8 @@
-import Root from "./root/Root";
+import Root from './root/Root';
 import { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
-import HomePage from "./pages/homePage/";
+import HomePage from './pages/homePage/';
 
 const ExperiencePage = lazy(() => import('@/pages/experiencePage/'));
 const AboutMePage = lazy(() => import('./pages/aboutMePage/'));
@@ -26,26 +26,26 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element:
+        element: (
           <Suspense fallback={<div>Loading...</div>}>
             <AboutMePage />
           </Suspense>
+        ),
       },
       {
         path: '/skills',
-        element:
+        element: (
           <Suspense fallback={<div>Loading...</div>}>
             <SkillsPage />
           </Suspense>
+        ),
       },
     ],
   },
 ] as RouteObject[]);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -1,4 +1,3 @@
-
 import Section from '@/components/Section.tsx';
 import HeroContent from './HeroContent.tsx';
 

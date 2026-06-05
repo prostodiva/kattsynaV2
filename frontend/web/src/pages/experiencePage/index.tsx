@@ -1,12 +1,11 @@
-import ExperienceHero from "./components/ExperienceHero.tsx";
-
+import ExperienceHero from './components/ExperienceHero.tsx';
 
 function ExperiencePage() {
-    return (
-        <>
-            <ExperienceHero />
-        </>
-    );
+  return (
+    <>
+      <ExperienceHero />
+    </>
+  );
 }
 
 export default ExperiencePage;

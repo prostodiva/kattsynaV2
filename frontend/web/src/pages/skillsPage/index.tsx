@@ -1,12 +1,11 @@
-import SkillsHero from "./components/SkillsHero.tsx";
-
+import SkillsHero from './components/SkillsHero.tsx';
 
 function SkillsPage() {
-    return (
-        <>
-            <SkillsHero />
-        </>
-    );
+  return (
+    <>
+      <SkillsHero />
+    </>
+  );
 }
 
 export default SkillsPage;

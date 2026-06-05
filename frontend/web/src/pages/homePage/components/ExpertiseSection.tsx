@@ -1,4 +1,3 @@
-
 import Section from '@/components/Section.tsx';
 import ExpertiseContent from './ExpertiseContent.tsx';
 
