@@ -10,7 +10,7 @@ function HeroContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
       {/*Left side*/}
       <div className="relative items-end justify-center overflow-hidden min-h-screen lg:min-h-dvh ">
         <picture className="absolute inset-0 w-full h-full">
@@ -29,8 +29,9 @@ function HeroContent() {
                     pt-24 pb-20
 
                     lg:absolute
-                    lg:top-[75%]
-                    lg:-translate-y-1/2
+                    lg:top-[26%]
+                    xl:top-[75%]
+                    xl:-translate-y-1/2
                 "
         >
           <h1>
@@ -51,7 +52,7 @@ function HeroContent() {
             <img
               src={right_cover}
               alt=""
-              className="w-84 md:w-150 h-auto object-contain"
+              className="w-84 md:w-178 h-auto object-contain"
             />
           </div>
 
@@ -70,7 +71,7 @@ function HeroContent() {
       </div>
 
       {/*Right side */}
-      <div className="hidden lg:block relative h-dvh">
+      <div className="hidden lg:block relative min-h-dvh overflow-hidden">
         <img
           src={right_cover}
           alt=""
