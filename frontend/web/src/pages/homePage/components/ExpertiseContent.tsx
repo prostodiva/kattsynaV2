@@ -1,17 +1,17 @@
 import block_3 from '@/assets/bg/Block_3.webp';
 import card from '@/assets/card.webp';
 import Button from '@/components/ui/Button';
-import { cards } from '@/pages/homePage/components/expertiseCardData'
+import { cards } from "@/pages/homePage/components/data";
 
 function ExpertiseContent() {
   return (
-    <div className="relative flex flex-col justify-center p-15 md:min-h-screen">
+    <div className="relative flex flex-col justify-center p-10 md:min-h-screen">
       <picture className="absolute inset-0">
         <img src={block_3} alt="" className="w-full h-full object-cover" />
       </picture>
 
       <div className="flex justify-center mb-10">
-        <h1 className="relative font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
+        <h1 className="relative text-center md:text-start font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
           My Core Competencies
         </h1>
       </div>
@@ -37,7 +37,7 @@ function ExpertiseContent() {
         ))}
 
         <div className="md:col-start-2 xl:col-start-3 flex items-center md:items-end xl:items-center justify-center mt-5 xl:-mt-30 2xl:-mt-50">
-          <Button variant="secondary" rounded>
+          <Button variant="secondary" rounded className="w-full">
             Hire Me
           </Button>
         </div>

@@ -12,7 +12,7 @@ function ValuesSectionContent() {
   return (
     <div className="w-full flex flex-col gap-5 px-10 md:px-8 lg:px-10 2xl:px-16 p-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <h1 className="md:col-span-2 xl:col-span-1 md:mt-20 xl:mt-0 font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
+        <h1 className="text-center md:text-start md:col-span-2 xl:col-span-1 md:mt-20 xl:mt-0 font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
           Cost of Inaction
         </h1>
         <p className="md:col-span-2 xl:col-span-1 font-goorm font-normal text-text-secondary text-lg 2xl:text-3xl max-w-sm md:max-w-xl 2xl:max-w-4xl leading-tight md:ml-2 2xl:mb-20">
@@ -31,7 +31,11 @@ function ValuesSectionContent() {
           <picture>
             <source media="(min-width: 1280px)" srcSet={plunk_1} />
             <source media="(min-width: 768px)" srcSet={planks_ipad1} />
-            <img src={plunk_1_mobile} alt="" className="w-full h-full object-cover"/>
+            <img
+              src={plunk_1_mobile}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </picture>
           <p className="absolute inset-0 flex items-center text-center md:text-start text-md 2xl:text-2xl font-goorm font-normal text-text-secondary max-w-md md:max-w-xl leading-normal px-4 md:ml-2">
             A lack of structure and best practices kills team productivity and
@@ -46,7 +50,11 @@ function ValuesSectionContent() {
           <picture>
             <source media="(min-width: 1280px)" srcSet={plunk_2} />
             <source media="(min-width: 768px)" srcSet={planks_ipad2} />
-            <img src={plunk_2_mobile} alt="" className="w-full h-full object-cover" />
+            <img
+              src={plunk_2_mobile}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </picture>
           <p className="absolute inset-0 flex items-center text-center md:text-start text-md 2xl:text-2xl font-goorm font-normal text-text-secondary max-w-sm md:max-w-xl 2xl:max-w-3xl leading-normal px-4 md:ml-2">
             Unresolved logic and UI issues ruin the user experience, forcing
@@ -61,7 +69,11 @@ function ValuesSectionContent() {
           <picture>
             <source media="(min-width: 1280px)" srcSet={plunk_3} />
             <source media="(min-width: 768px)" srcSet={planks_ipad3} />
-            <img src={plunk_3_mobile} alt="" className="w-full h-full object-cover" />
+            <img
+              src={plunk_3_mobile}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </picture>
           <p className="absolute inset-0 flex items-center text-center md:text-start text-md 2xl:text-2xl font-goorm font-normal text-text-secondary max-w-sm md:max-w-xl 2xl:max-w-3xl leading-normal px-4 md:ml-2">
             Without scalable architecture and automated testing, systems crash

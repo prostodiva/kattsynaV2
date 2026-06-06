@@ -1,3 +1,20 @@
+export const projects = [
+    {
+        title: "",
+        src: "",
+        url: ""
+    },
+    {
+        title: "",
+        src: "",
+        url: ""
+    },
+    {
+        title: "",
+        src: "",
+        url: ""
+    }
+]
 
 export const cards = [
   {

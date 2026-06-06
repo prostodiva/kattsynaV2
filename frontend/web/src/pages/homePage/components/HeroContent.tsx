@@ -22,18 +22,7 @@ function HeroContent() {
           />
         </picture>
 
-        <div
-          className="
-                    relative z-10
-                    px-5 md:px-8
-                    pt-24 pb-20
-
-                    lg:absolute
-                    lg:top-[26%]
-                    xl:top-[75%]
-                    xl:-translate-y-1/2
-                "
-        >
+        <div className="relative z-10 px-5 md:px-8 pt-24 pb-20 lg:absolute lg:top-[26%] xl:top-[75%] xl:-translate-y-1/2">
           <h1>
             <span className="font-unitea font-bold block text-5xl md:text-7xl 2xl:text-9xl leading-none">
               Reliable <br className="md:hidden" />
