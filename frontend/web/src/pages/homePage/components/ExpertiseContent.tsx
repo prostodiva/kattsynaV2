@@ -11,22 +11,22 @@ const cards = [
   {
     title: 'Full-Cycle Development',
     text: 'No need to hire multiple specialists. I independently develop end-to-end web applications - from database design to the client interface - using modern frameworks and abstractions.',
-    col: 'md:col-start-3',
+    col: 'md:col-start-2 xl:col-start-3',
   },
   {
     title: 'User Retention',
     text: 'I identify and resolve critical logic and UI bugs, enhancing app stability, improving onboarding conversion, and reducing user drop-off from your app during onboarding.',
-    col: 'md:col-start-5',
+    col: 'md:col-start-1 xl:col-start-5',
   },
   {
     title: 'On-Time Releases',
     text: 'My experience with Agile/Scrum and CI/CD workflows allows me to integrate seamlessly into your team and deliver solutions on schedule. I help you ship new features without chaos or missed sprint deadlines.',
-    col: 'md:col-start-2',
+    col: 'md:col-start-2 xl:col-start-2',
   },
   {
     title: 'Clean Code',
     text: 'I combine precision and creativity to produce high-quality code for your products and services. This reduces technical debt and helps you avoid costly rewrites in the future.',
-    col: 'md:col-start-4',
+    col: 'md:col-start-1 xl:col-start-4',
   },
 ];
 
@@ -43,7 +43,7 @@ function ExpertiseContent() {
         </h1>
       </div>
 
-      <div className="relative grid grid-cols-1 md:grid-cols-5">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-y-5 md:gap-y-10 xl:gap-y-0 md:gap-x-5 xl:gap-x-0">
         {cards.map(({ title, text, col }) => (
           <div
             key={title}
@@ -63,7 +63,7 @@ function ExpertiseContent() {
           </div>
         ))}
 
-        <div className="md:col-start-3 flex items-center justify-center mt-5 md:-mt-52 xl:-mt-30 2xl:-mt-50">
+        <div className="md:col-start-2 xl:col-start-3 flex items-center md:items-end xl:items-center justify-center mt-5 xl:-mt-30 2xl:-mt-50">
           <Button variant="secondary" rounded>
             Hire Me
           </Button>
