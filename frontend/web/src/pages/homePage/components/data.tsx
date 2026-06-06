@@ -1,19 +1,12 @@
+// import P_1 from '@/assets/projects/P_1.webp'
+// import P_2 from '@/assets/projects/P_2.webp'
+// import P_3 from '@/assets/projects/P_3.webp'
+// import P_1_active from '@/assets/projects/P_1_active.webp'
+// import P_2_active from '@/assets/projects/P_2_active.webp'
+
 export const projects = [
-    {
-        title: "",
-        src: "",
-        url: ""
-    },
-    {
-        title: "",
-        src: "",
-        url: ""
-    },
-    {
-        title: "",
-        src: "",
-        url: ""
-    }
+//   { title: "", src: P_1, srcActive: P_1_active, url: "" },
+//     { title: "", src: P_2, srcActive: P_2_active, url: "" },
 ]
 
 export const cards = [

@@ -1,3 +1,4 @@
+import type { PluginAPI } from 'tailwindcss/types/config';
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -15,5 +16,15 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addUtilities }: PluginAPI) {
+            addUtilities({
+            '.scrollbar-hide': {
+                '-ms-overflow-style': 'none',
+                'scrollbar-width': 'none',
+                '&::-webkit-scrollbar': { display: 'none' },
+            },
+            });
+        },
+    ],
 }

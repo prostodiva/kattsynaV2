@@ -1,5 +1,7 @@
 import Button from "@/components/ui/Button";
-import ProjectCard from "@/components/ui/ProjectCard";
+import Projects from "./Projects";
+// import ProjectCard from "@/components/ui/ProjectCard";
+// import { projects } from "./data";
 
 function ProjectContent() {
   return (
@@ -9,9 +11,15 @@ function ProjectContent() {
               My Best Projects
             </h1>
 
-          <div>
-            <ProjectCard />
-          </div>
+          {/* <div className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6">
+            {projects.map((project) => (
+            <div key={project.title} className="snap-start shrink-0 w-[85vw] md:w-[45vw] xl:w-[30vw]">
+                <ProjectCard {...project} />
+            </div>
+            ))}
+          </div> */}
+
+          <Projects />
 
           <div className="flex items-center justify-center mt-5">
             <Button variant="secondary" rounded className="w-full md:w-auto">
