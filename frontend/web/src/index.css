@@ -133,4 +133,9 @@ body {
 
   /* Border */
   --color-border-light: #d0ebff;
+
+  /* Gradient */
+  --color-gradient-text-from: #FFFFFF;
+  --color-gradient-text-via: #4B4B4B;
+  --color-gradient-text-to: #2B2B2B;
 }

@@ -15,13 +15,14 @@ interface NavbarProps {
   logo?: React.ReactNode;
   variant?: 'horizontal' | 'vertical';
   alignment?: 'start' | 'center' | 'end' | 'between';
+  showHamburger?: boolean;
 }
 
 function Navbar({
   links,
   linkClassName = 'md:mx-4 2xl:text-2xl font-goorm font-normal brand-navbar flex items-center gap-1 whitespace-nowrap',
   activeLinkClassName = 'bg-brand-highlight px-3 rounded-sm',
-  variant = 'horizontal',
+  variant = 'horizontal', showHamburger = true,
 }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -37,9 +38,11 @@ function Navbar({
   const variantClasses =
     variant === 'vertical'
       ? 'flex-col'
-      : mobileOpen
-        ? 'flex-col absolute top-12 right-0'
-        : 'hidden md:flex';
+      : !showHamburger
+        ? 'flex flex-row flex-wrap'       
+        : mobileOpen
+          ? 'flex-col absolute top-12 right-0'
+          : 'hidden md:flex';        
 
   const renderedLinks = navLinks.map((link) => (
     <Link
@@ -53,9 +56,9 @@ function Navbar({
   ));
 
   return (
-    <div className="flex items-center justify-end md:justify-center">
+    <div className="flex w-full items-center justify-end md:justify-center">
       {/*hamburger button for mobile*/}
-      {variant === 'horizontal' && (
+      {showHamburger && variant === 'horizontal' && (
         <button
           className="md:hidden ml-auto px-4 py-2 text-xl font-goorm font-normal uppercase"
           onClick={() => setMobileOpen(!mobileOpen)}
