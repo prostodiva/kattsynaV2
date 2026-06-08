@@ -5,7 +5,7 @@ import { cards } from "@/pages/homePage/components/data";
 
 function ExpertiseContent() {
   return (
-    <div className="relative flex flex-col justify-center p-10 md:min-h-screen">
+    <div className="relative flex flex-col justify-center p-5 md:min-h-screen">
       <picture className="absolute inset-0">
         <img src={block_3} alt="" className="w-full h-full object-cover" />
       </picture>

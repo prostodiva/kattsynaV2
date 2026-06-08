@@ -10,7 +10,7 @@ import planks_ipad3 from '@/assets/plunks/planks_ipad3.webp';
 
 function ValuesSectionContent() {
   return (
-    <div className="w-full flex flex-col gap-5 px-10 md:px-8 lg:px-10 2xl:px-16 p-10">
+    <div className="w-full flex flex-col gap-5 px-5 md:px-8 lg:px-10 2xl:px-16 p-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <h1 className="text-center md:text-start md:col-span-2 xl:col-span-1 md:mt-20 xl:mt-0 font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
           Cost of Inaction

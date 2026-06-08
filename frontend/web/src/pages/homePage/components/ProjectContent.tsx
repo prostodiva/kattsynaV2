@@ -1,23 +1,13 @@
 import Button from "@/components/ui/Button";
 import Projects from "./Projects";
-// import ProjectCard from "@/components/ui/ProjectCard";
-// import { projects } from "./data";
 
 function ProjectContent() {
   return (
-      <div className="w-full flex flex-col gap-5 px-10 md:px-8 lg:px-10 2xl:px-16 p-10">
+      <div className="w-full flex flex-col gap-5 px-5 md:px-8 lg:px-10 2xl:px-16 p-10">
           <div className="grid grid-cols-1 gap-10">
             <h1 className="text-center md:mt-20 xl:mt-0 font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
               My Best Projects
             </h1>
-
-          {/* <div className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6">
-            {projects.map((project) => (
-            <div key={project.title} className="snap-start shrink-0 w-[85vw] md:w-[45vw] xl:w-[30vw]">
-                <ProjectCard {...project} />
-            </div>
-            ))}
-          </div> */}
 
           <Projects />
 
