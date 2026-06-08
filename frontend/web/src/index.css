@@ -116,6 +116,7 @@ body {
   --color-text-primary: #fffefb; /* title */
   --color-text-secondary: #fdfeff; /* p */
   --color-text-ternary: #4a4849; /* on yellow button */
+  --color-text-gray: #969696;
 
   /* Brand - identity color, CTAs, links, highlights*/
   --color-brand-navbar: #fdfeff;
