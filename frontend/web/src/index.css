@@ -11,9 +11,9 @@ body {
   min-height: 100%;
 }
 
-* {
-  outline: 1px solid red;
-}
+/* * {
+  outline: 1px solid rgb(161, 181, 226);
+} */
 
 @theme {
   --font-unitea: 'UniteaSans', sans-serif;
@@ -115,6 +115,7 @@ body {
   /* Text */
   --color-text-primary: #fffefb; /* title */
   --color-text-secondary: #fdfeff; /* p */
+  --color-text-links: #B0B0B0; /* nav links */
   --color-text-ternary: #4a4849; /* on yellow button */
   --color-text-gray: #969696;
 

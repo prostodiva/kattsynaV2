@@ -20,8 +20,8 @@ interface NavbarProps {
 
 function Navbar({
   links,
-  linkClassName = 'md:mx-4 2xl:text-2xl font-goorm font-normal brand-navbar flex items-center gap-1 whitespace-nowrap',
-  activeLinkClassName = 'bg-brand-highlight px-3 rounded-sm',
+  linkClassName = 'md:mx-4 2xl:text-2xl font-goorm font-normal text-text-links brand-navbar flex items-center gap-1 whitespace-nowrap',
+  activeLinkClassName = 'bg-brand-highlight text-text-secondary px-3 rounded-sm py-1',
   variant = 'horizontal', showHamburger = true,
 }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
