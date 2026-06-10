@@ -1,5 +1,6 @@
 import Link from './Link';
 import { useState } from 'react';
+import MobileMenu from './MobileMenu';
 
 interface NavLink {
   label: string;
@@ -75,6 +76,15 @@ function Navbar({
       >
         {renderedLinks}
       </nav>
+
+      {mobileOpen && (
+      <MobileMenu
+        isOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        links={navLinks}
+        activeLinkClassName="bg-brand-nav px-3 rounded-sm py-1"
+      />
+    )}
     </div>
   );
 }

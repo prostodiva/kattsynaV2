@@ -7,9 +7,10 @@ interface LinkProps {
   children: ReactNode;
   className?: string;
   activeClassName?: string;
+  onClick?: () => void;
 }
 
-function Link({ to, children, className, activeClassName }: LinkProps) {
+function Link({ to, children, className, activeClassName, onClick }: LinkProps) {
   const { navigate, currentPath } = useNavigation();
 
   const classes = classNames(className, currentPath === to && activeClassName);
@@ -21,6 +22,7 @@ function Link({ to, children, className, activeClassName }: LinkProps) {
     event.preventDefault();
 
     navigate(to);
+    onClick?.();
   };
 
   return (

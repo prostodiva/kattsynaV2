@@ -11,6 +11,11 @@ body {
   min-height: 100%;
 }
 
+dialog::backdrop {
+  background: transparent;
+  height: 100dvh;
+}
+
 /* * {
   outline: 1px solid rgb(161, 181, 226);
 } */
@@ -122,6 +127,7 @@ body {
   /* Brand - identity color, CTAs, links, highlights*/
   --color-brand-navbar: #fdfeff;
   --color-brand-highlight: #4a4849;
+  --color-brand-nav: #383838;
   --color-brand-focus: #f1eeee;
 
   /* Buttons */
