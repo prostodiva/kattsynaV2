@@ -1,7 +1,15 @@
 import block_3 from '@/assets/bg/Block_3.webp';
 import card from '@/assets/card.webp';
+import { cards } from "@/components/data";
 import Button from '@/components/ui/Button';
-import { cards } from "@/pages/homePage/components/data";
+
+const layout = [
+  'md:col-start-1',
+  'md:col-start-2 xl:col-start-3',
+  'md:col-start-1 xl:col-start-5',
+  'md:col-start-2 xl:col-start-2',
+  'md:col-start-1 xl:col-start-4',
+];
 
 function ExpertiseContent() {
   return (
@@ -17,10 +25,10 @@ function ExpertiseContent() {
       </div>
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-y-5 md:gap-y-10 xl:gap-y-0 md:gap-x-5 xl:gap-x-0">
-        {cards.map(({ title, text, col }) => (
+        {cards.map(({ title, text }, index)  => (
           <div
             key={title}
-            className={`relative flex flex-col justify-between p-5 2xl:p-20 min-h-64 ${col}`}
+            className={`relative flex flex-col justify-between p-5 2xl:p-20 min-h-64 ${layout[index]}`}
           >
             <img
               src={card}

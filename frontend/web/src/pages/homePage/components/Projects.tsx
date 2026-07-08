@@ -1,7 +1,7 @@
-import { useRef, useState, useEffect } from 'react';
-import ProjectCard from "@/components/ui/ProjectCard";
-import { projects } from "./data";
 import { getCardStyle } from '@/components/ui/getCardStyle';
+import ProjectCard from "@/components/ui/ProjectCard";
+import { useEffect, useRef, useState } from 'react';
+import { projects } from "../../../components/data";
 
 const CLONES = 1;
 const looped = [...projects, ...projects, ...projects];
