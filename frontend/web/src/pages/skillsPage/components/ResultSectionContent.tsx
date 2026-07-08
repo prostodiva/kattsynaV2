@@ -11,12 +11,14 @@ function ResultSectionContent() {
         </span>
       </h1>
 
-      <p className="relative font-goorm text-text-gray 2xl:text-xl max-w-sm md:max-w-sm xl:max-w-md leading-tight p-4">
-        I focus on solving business problems, not just
-        writing syntax. Here is how my full-stack
-        expertise protects your product from technical
-        debt, server crashes, and poor user retention.
-      </p>
+      <div className="flex justify-center">
+        <p className="relative font-goorm text-text-gray 2xl:text-xl max-w-sm md:max-w-sm xl:max-w-md leading-tight p-4 text-center">
+              I focus on solving business problems, not just
+              writing syntax. Here is how my full-stack
+              expertise protects your product from technical
+              debt, server crashes, and poor user retention.
+            </p>
+      </div>
       
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 min-h-fit">
