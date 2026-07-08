@@ -11,7 +11,7 @@ function ResultSectionContent() {
         </span>
       </h1>
 
-      <p className="relative font-goorm text-text-gray 2xl:text-xl max-w-sm md:max-w-sm xl:max-w-md leading-tight">
+      <p className="relative font-goorm text-text-gray 2xl:text-xl max-w-sm md:max-w-sm xl:max-w-md leading-tight p-4">
         I focus on solving business problems, not just
         writing syntax. Here is how my full-stack
         expertise protects your product from technical
@@ -19,7 +19,7 @@ function ResultSectionContent() {
       </p>
       
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 min-h-fit">
         {cards.map(({ title, text })  => (
           <div
             key={title}
@@ -39,7 +39,7 @@ function ResultSectionContent() {
           </div>
         ))}
 
-        <div className="md:col-start-2 xl:col-start-3 flex items-center md:items-end xl:items-center justify-center mt-5 xl:-mt-30 2xl:-mt-50">
+        <div className="md:col-start-2 xl:col-start-3 flex items-center md:items-end xl:items-center justify-center mt-5">
           <Button variant="secondary" rounded className="w-full">
             Hire Me
           </Button>
