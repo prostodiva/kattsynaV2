@@ -12,7 +12,7 @@ function ResultSectionContent() {
       </h1>
 
       <div className="flex justify-center">
-        <p className="relative font-goorm text-text-gray 2xl:text-xl max-w-sm md:max-w-sm xl:max-w-md leading-tight p-4 text-center">
+        <p className="relative font-goorm text-text-gray 2xl:text-xl max-w-sm md:max-w-sm xl:max-w-md leading-tight p-4">
               I focus on solving business problems, not just
               writing syntax. Here is how my full-stack
               expertise protects your product from technical

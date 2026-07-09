@@ -1,4 +1,4 @@
-# AGENT.md — eureka-web (frontend/web)
+# AGENT.md — portfolio kattsyna (frontend/web)
 
 A React 19 + TypeScript SPA built with Vite 7 and Tailwind CSS v4.
 Routing: react-router-dom v7. Animation: motion. Icons: react-icons.
