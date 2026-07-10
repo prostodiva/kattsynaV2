@@ -8,27 +8,24 @@ function AboutMeSharedContent() {
                     About Me
                 </h1>
 
-                <div className="items-center justify-between hidden md:flex md:col-2 font-goorm font-normal text-text-gray text-md xl:text-xl xl:max-w-4xl">
+                <div className="items-center justify-between hidden md:flex font-goorm font-normal text-text-gray text-md xl:text-xl xl:max-w-4xl">
                     <h3>Think Strategically</h3>
                     <h3>Guarantee Reliability</h3>
                     <h3>Cross-Disciplinary</h3>
                 </div>
 
-                 <p className="md:col-2 font-goorm font-normal text-text-secondary text-lg 2xl:text-2xl max-w-sm md:max-w-md 2xl:max-w-3xl leading-tight">
-                    I Specialize In Building End-To-End Full-Stack Systems. 
-                    Reliable, Scalable, And Architected Before A Single Line Of Code Is Written. 
+                 <p className="font-goorm font-normal text-text-secondary text-lg 2xl:text-2xl max-w-sm md:max-w-md 2xl:max-w-3xl leading-tight">
+                    I Specialize In Building End-To-End Full-Stack Systems.
+                    Reliable, Scalable, And Architected Before A Single Line Of Code Is Written.
                     I Take Full Ownership Of Features So Your Team Can Deliver High-Quality Products On Time And Without Chaos.
                 </p>
 
-                <div className="relative md:col-2">
-                    <picture>
-                        <source media="(min-width: 768px)" srcSet={photo} />
-                        <img
+                <div className="relative">
+                    <img
                         src={photo}
                         alt=""
                         className="w-full h-full object-cover md:ml-0 md:w-3/4 xl:w-1/2 md:mx-auto"
-                        />
-                    </picture>
+                    />
                 </div>
             </div>
         </div>

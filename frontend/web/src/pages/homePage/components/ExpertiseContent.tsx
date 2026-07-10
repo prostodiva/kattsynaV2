@@ -1,7 +1,7 @@
 import block_3 from '@/assets/bg/Block_3.webp';
-import card from '@/assets/card.webp';
 import { cards } from "@/components/data";
 import Button from '@/components/ui/Button';
+import ResultCard from '@/components/ui/ResultCard';
 
 const layout = [
   'md:col-start-1',
@@ -25,23 +25,14 @@ function ExpertiseContent() {
       </div>
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-y-5 md:gap-y-10 xl:gap-y-0 md:gap-x-5 xl:gap-x-0">
-        {cards.map(({ title, text }, index)  => (
-          <div
+        {cards.map(({ title, text }, index) => (
+          <ResultCard
             key={title}
-            className={`relative flex flex-col justify-between p-5 2xl:p-20 min-h-64 ${layout[index]}`}
-          >
-            <img
-              src={card}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <p className="relative font-goorm text-text-secondary 2xl:text-2xl 2xl:leading-tight">
-              {text}
-            </p>
-            <h3 className="relative font-stack font-bold text-xl 2xl:text-3xl mt-8">
-              {title}
-            </h3>
-          </div>
+            title={title}
+            text={text}
+            className={`min-h-64 ${layout[index]}`}
+            contentClassName="p-5 2xl:p-20"
+          />
         ))}
 
         <div className="md:col-start-2 xl:col-start-3 flex items-center md:items-end xl:items-center justify-center mt-5 xl:-mt-30 2xl:-mt-50">
