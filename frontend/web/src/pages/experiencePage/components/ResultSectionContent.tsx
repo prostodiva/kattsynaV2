@@ -15,7 +15,7 @@ function ResultSectionContent() {
       </h1>
 
       <div className="flex justify-center">
-        <p className="relative font-goorm text-text-gray 2xl:text-2xl max-w-sm md:max-w-sm xl:max-w-xl leading-tight p-4">
+        <p className="relative font-goorm text-text-gray xl:text-2xl max-w-sm md:max-w-sm xl:max-w-xl leading-tight p-4">
               I focus on solving business problems, not just
               writing syntax. Here is how my full-stack
               expertise protects your product from technical
@@ -31,16 +31,16 @@ function ResultSectionContent() {
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerUp}>
         {cards.map(({ title, text }) => (
-          <div key={title} className="md:snap-start md:shrink-0 w-full sm:w-1/2 md:w-1/4 relative flex flex-col justify-between xl:min-h-140">
+          <div key={title} className="md:snap-start md:shrink-0 w-full sm:w-1/2 md:w-1/4 relative flex flex-col justify-between">
             <img
               src={card}
               alt="Card Image"
               className="absolute inset-0 w-full h-full object-cover xl:object-contain"
             />
-            <p className="relative font-goorm text-text-secondary 2xl:text-2xl 2xl:leading-tight pt-5 pr-2 pl-2 sm:pt-20 xl:pt-60 xl:pl-5 xl:pr-5 2xl:pt-80 2xl:pl-15 2xl:pr-15">
+            <p className="relative font-goorm text-text-secondary 2xl:text-2xl 2xl:leading-tight pt-5 pr-2 pl-2 sm:pt-20 xl:pt-40 xl:pl-5 xl:pr-5 2xl:pt-80 2xl:pl-15 2xl:pr-15">
               {text}
             </p>
-            <h3 className="relative font-stack font-bold text-xl 2xl:text-3xl mt-8 pl-2 xl:-translate-y-30 xl:pl-5 2xl:-translate-y-5 2xl:pl-15 pb-4">
+            <h3 className="relative font-stack font-bold text-xl 2xl:text-3xl mt-8 pl-2 xl:pl-5 2xl:-translate-y-5 2xl:pl-15 pb-4">
               {title}
             </h3>
           </div>
