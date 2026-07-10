@@ -1,5 +1,5 @@
 import Section from '@/components/Section.tsx';
-import ResultSectionContent from './ResultSectionContent';
+import ResultSectionContent from '../../experiencePage/components/ResultSectionContent';
 
 function ResultsSection() {
   return (

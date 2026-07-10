@@ -2,16 +2,14 @@ import { getCardStyle } from '@/components/ui/getCardStyle';
 import ProjectCard from "@/components/ui/ProjectCard";
 import { useEffect, useRef, useState } from 'react';
 import { projects } from "../../../components/data";
+import useDragScroll from "@/hooks/useDragScroll";
 
 const CLONES = 1;
 const looped = [...projects, ...projects, ...projects];
 const offset = projects.length * CLONES;
 
 function Projects() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollStart = useRef(0);
+  const { scrollRef, onPointerDown, onPointerMove, onPointerUp } = useDragScroll();
   const [activeIndex, setActiveIndex] = useState(offset);
   const initialized = useRef(false);
 
@@ -22,31 +20,6 @@ function Projects() {
     const cards = Array.from(el.children) as HTMLElement[];
     el.scrollLeft = cards[offset].offsetLeft - (el.clientWidth - cards[offset].clientWidth) / 2;
   }, []);
-
-  const onPointerDown = (e: React.PointerEvent) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    isDragging.current = true;
-    startX.current = e.clientX;
-    scrollStart.current = el.scrollLeft;
-    el.setPointerCapture(e.pointerId);
-    el.style.cursor = 'grabbing';
-    el.style.scrollSnapType = 'none';
-  };
-
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (!isDragging.current) return;
-    scrollRef.current!.scrollLeft = scrollStart.current - (e.clientX - startX.current);
-  };
-
-  const onPointerUp = (e: React.PointerEvent) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    isDragging.current = false;
-    el.style.cursor = 'grab';
-    el.style.scrollSnapType = 'x mandatory';
-    el.releasePointerCapture(e.pointerId);
-  };
 
   const handleScrollEnd = () => {
     const el = scrollRef.current;

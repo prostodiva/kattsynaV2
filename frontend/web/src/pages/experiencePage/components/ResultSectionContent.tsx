@@ -1,8 +1,11 @@
 import { cards } from "@/components/data";
 import card from '@/assets/card.webp';
 import Button from "@/components/ui/Button";
+import useDragScroll from "@/hooks/useDragScroll";
 
 function ResultSectionContent() {
+  const { scrollRef, onPointerDown, onPointerMove, onPointerUp } = useDragScroll();
+
   return (
     <div className="flex-col justify-center p-5">
       <h1 className="text-center">
@@ -21,12 +24,14 @@ function ResultSectionContent() {
       </div>
       
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 min-h-fit">
-        {cards.map(({ title, text })  => (
-          <div
-            key={title}
-            className={`relative flex flex-col justify-between p-5 2xl:p-20 min-h-64`}
-          >
+      <div className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-5 cursor-grab select-none"
+          ref={scrollRef}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}>
+        {cards.map(({ title, text }) => (
+        <div key={title} className="snap-start shrink-0 w-1/2 md:w-1/3 xl:w-1/4 relative flex flex-col justify-between p-5 min-h-64">
             <img
               src={card}
               alt="Card Image"
