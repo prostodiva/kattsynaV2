@@ -24,7 +24,7 @@ function OwnershipSectionContent() {
           </div>
 
           {/* Two copy blocks flanking the circuit art baked into the background */}
-          <div className="grow flex flex-col justify-between items-start gap-12 max-w-md mx-auto pt-10 md:pt-16">
+          <div className="grow flex flex-col justify-between items-start gap-12 max-w-xs mx-auto">
             <div className="flex flex-col gap-4">
               <h3 className="font-stack font-bold text-text-primary text-xl md:text-2xl 2xl:text-3xl leading-snug">
                 More Than Code:

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ternary';
+type ButtonVariant = 'primary' | 'secondary' | 'ternary' | 'black';
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps {
@@ -37,6 +37,8 @@ function Button({
         variant === 'secondary' && !active && !backgroundImage,
       'py-6 px-8 bg-surface-card text-white':
         variant === 'ternary' && active && !backgroundImage,
+        'w-full md:w-auto font-goorm font-medium uppercase text-text-secondary bg-surface-section rounded-sm px-10 py-4 text-sm md:text-base 2xl:text-xl transition-colors duration-200 hover:bg-brand-nav':
+        variant === 'black',
       'rounded-sm': rounded,
       'bg-white': outline && !backgroundImage,
       'opacity-50 cursor-not-allowed': disabled,

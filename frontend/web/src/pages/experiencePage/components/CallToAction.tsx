@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 import cta from "@/assets/bg/cta.webp";
+import Button from "@/components/ui/Button";
 
 const tags = ["LLMs", "RAG", "Python"];
 
@@ -43,12 +44,13 @@ function CallToAction() {
                 rel="noopener noreferrer"
                 className="w-full md:w-auto"
               >
-                <button
+                <Button
                   type="button"
+                  variant="black"
                   className="w-full md:w-auto font-goorm font-medium uppercase text-text-secondary bg-surface-section rounded-sm px-10 py-4 text-sm md:text-base 2xl:text-xl transition-colors duration-200 hover:bg-brand-nav"
                 >
                   Invite To Interview
-                </button>
+                </Button>
               </a>
             </div>
           </div>
