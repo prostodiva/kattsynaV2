@@ -1,11 +1,18 @@
+import skillsHero from "@/assets/bg/skillsHero.webp"
+
 function SkillsHeroContent() {
   return (
-    <div className="flex-col justify-center">
-      <h1>
-        <span className="font-unitea font-bold block text-4xl sm:text-5xl md:text-8xl lg:text-9xl 2xl:text-[12rem] 2xl:leading-none">
-          Skills <br /> Page
-        </span>
-      </h1>
+    <div className="w-full">
+        <div className="relative w-full overflow-hidden min-h-screen lg:min-h-dvh">
+            <picture className="absolute inset-0 w-full h-full">
+                <source media="(min-width: 768px)" srcSet={skillsHero} />
+                    <img
+                      src={skillsHero}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
+            </picture>
+        </div>
     </div>
   );
 }
