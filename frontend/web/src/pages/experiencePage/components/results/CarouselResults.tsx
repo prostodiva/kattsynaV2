@@ -43,9 +43,16 @@ function CarouselResults() {
       </div>
 
       <div className="flex justify-center">
-        <Button variant="secondary" rounded>
-          {resultsContent.cta}
-        </Button>
+         <a
+              href="https://www.linkedin.com/in/margarita-kattsyna/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <Button variant="secondary" rounded>
+              {resultsContent.cta}
+            </Button>
+        </a>
+        
       </div>
     </div>
   );
