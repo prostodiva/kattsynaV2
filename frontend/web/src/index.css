@@ -26,9 +26,9 @@ dialog::backdrop {
   height: 100dvh;
 }
 
-/* * {
+/** {
   outline: 1px solid rgb(161, 181, 226);
-} */
+}*/
 
 @theme {
   --font-unitea: 'UniteaSans', sans-serif;
@@ -130,7 +130,7 @@ dialog::backdrop {
   /* Text */
   --color-text-primary: #fffefb; /* title */
   --color-text-secondary: #fdfeff; /* p */
-  --color-text-links: #B0B0B0; /* nav links */
+  --color-text-links: #b0b0b0; /* nav links */
   --color-text-ternary: #4a4849; /* on yellow button */
   --color-text-gray: #969696;
 
@@ -152,7 +152,7 @@ dialog::backdrop {
   --color-border-light: #d0ebff;
 
   /* Gradient */
-  --color-gradient-text-from: #FFFFFF;
-  --color-gradient-text-via: #4B4B4B;
-  --color-gradient-text-to: #2B2B2B;
+  --color-gradient-text-from: #ffffff;
+  --color-gradient-text-via: #4b4b4b;
+  --color-gradient-text-to: #2b2b2b;
 }
