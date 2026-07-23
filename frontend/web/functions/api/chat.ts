@@ -134,8 +134,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         }
 
         send({ type: 'done' });
-      } catch {
-        send({ type: 'error' });
+      } catch (err) {
+        console.error('[/api/chat] error:', err);
+        send({ type: 'error', message: String((err as Error)?.message ?? err) });
       } finally {
         controller.close();
       }

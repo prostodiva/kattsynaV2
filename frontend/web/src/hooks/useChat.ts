@@ -8,6 +8,7 @@ interface StreamEvent {
   type: 'sources' | 'token' | 'done' | 'error';
   content?: string;
   sources?: Source[];
+  message?: string;
 }
 
 /**
@@ -63,6 +64,7 @@ export function useChat() {
           );
         } else if (event.type === 'error') {
           errored = true;
+          if (event.message) console.error('[chat] server error:', event.message);
         }
       };
 
@@ -84,7 +86,8 @@ export function useChat() {
       }
 
       if (errored) throw new Error('stream error');
-    } catch {
+    } catch (err) {
+      console.error('[chat] request failed:', err);
       setMessages((prev) =>
         prev.map((m) =>
           m.id === assistantId && !m.content
