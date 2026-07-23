@@ -14,6 +14,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   backgroundImage?: string;
+  ariaLabel?: string;
 }
 
 function Button({
@@ -27,6 +28,7 @@ function Button({
   className,
   onClick,
   backgroundImage,
+  ariaLabel,
 }: ButtonProps) {
   const buttonClasses = classNames(
     'flex justify-center items-center text-center whitespace-nowrap transition-colors duration-200',
@@ -61,6 +63,7 @@ function Button({
     <button
       type={type}
       disabled={disabled}
+      aria-label={ariaLabel}
       className={buttonClasses}
       style={backgroundStyle}
       onClick={onClick}

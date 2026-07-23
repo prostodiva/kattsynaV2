@@ -102,6 +102,7 @@ function HeroContent() {
               <Button
                 type="button"
                 onClick={() => setIsChatOpen(false)}
+                ariaLabel="Close chat"
                 className="absolute -top-3 -right-3 z-30"
                 variant="ternary"
                 rounded
@@ -146,6 +147,7 @@ function HeroContent() {
               <Button
                 type="button"
                 onClick={() => setIsMobileChatOpen(false)}
+                ariaLabel="Close chat"
                 className="absolute -top-3 -right-3 z-30"
                 variant="ternary"
                 rounded

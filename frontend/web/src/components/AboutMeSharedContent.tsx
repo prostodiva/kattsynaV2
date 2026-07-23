@@ -1,17 +1,22 @@
 import photo from "@/assets/Foto.webp"
 
-function AboutMeSharedContent() {
+interface AboutMeSharedContentProps {
+  /** Heading level for "About Me" — h1 on the About page, h2 in the homepage section. */
+  as?: 'h1' | 'h2';
+}
+
+function AboutMeSharedContent({ as: Heading = 'h2' }: AboutMeSharedContentProps) {
   return (
     <div className="w-full flex flex-col gap-5 px-10 md:px-8 lg:px-10 2xl:px-16 p-20">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-                <h1 className="text-center md:text-start md:col-span-2 xl:col-span-1 md:mt-20 xl:mt-0 font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
+                <Heading className="text-center md:text-start md:col-span-2 xl:col-span-1 md:mt-20 xl:mt-0 font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
                     About Me
-                </h1>
+                </Heading>
 
                 <div className="items-center justify-between hidden md:flex font-goorm font-normal text-text-gray text-md xl:text-xl xl:max-w-4xl">
-                    <h3>Think Strategically</h3>
-                    <h3>Guarantee Reliability</h3>
-                    <h3>Cross-Disciplinary</h3>
+                    <span>Think Strategically</span>
+                    <span>Guarantee Reliability</span>
+                    <span>Cross-Disciplinary</span>
                 </div>
 
                  <p className="font-goorm font-normal text-text-secondary text-lg 2xl:text-2xl max-w-sm md:max-w-md 2xl:max-w-3xl leading-tight">

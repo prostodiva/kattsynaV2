@@ -30,6 +30,7 @@ export function ChatInput({ disabled, onSend }: Props) {
           disabled={disabled}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
+          aria-label="Ask a question"
           placeholder="Ask a question..."
           className="flex-1 resize-none rounded-lg bg-surface-section p-3 focus:outline-none focus:ring-0 focus:border-brand-focus"
         />

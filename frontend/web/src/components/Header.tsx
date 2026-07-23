@@ -20,7 +20,7 @@ function Header() {
         >
           <img
             src={logo}
-            alt="Company Logo"
+            alt=""
             className="h-6 md:h-8 2xl:h-12 w-auto pl-10"
           />
         </Link>

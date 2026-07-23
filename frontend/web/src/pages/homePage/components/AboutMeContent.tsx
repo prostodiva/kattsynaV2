@@ -2,7 +2,7 @@ import AboutMeSharedContent from "@/components/AboutMeSharedContent";
 
 function AboutMeContent() {
     return(
-        <AboutMeSharedContent />
+        <AboutMeSharedContent as="h2" />
     );
 }
 

@@ -19,9 +19,9 @@ function ExpertiseContent() {
       </picture>
 
       <div className="flex justify-center mb-10">
-        <h1 className="relative text-center md:text-start font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
+        <h2 className="relative text-center md:text-start font-unitea font-bold text-3xl md:text-5xl xl:text-5xl 2xl:text-7xl text-text-primary">
           My Core Competencies
-        </h1>
+        </h2>
       </div>
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-y-5 md:gap-y-10 md:gap-x-5 xl:gap-x-8">
