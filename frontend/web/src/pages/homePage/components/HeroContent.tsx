@@ -8,6 +8,7 @@ import { CgCloseO } from 'react-icons/cg';
 
 function HeroContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isMobileChatOpen, setIsMobileChatOpen] = useState(false);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
@@ -112,6 +113,50 @@ function HeroContent() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Mobile AI chat — the desktop version lives in the right column (hidden below lg) */}
+      <div className="lg:hidden">
+        {/* Floating "Ask AI" trigger */}
+        <div
+          className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
+            isMobileChatOpen
+              ? 'opacity-0 scale-95 pointer-events-none'
+              : 'opacity-100'
+          }`}
+        >
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => setIsMobileChatOpen(true)}
+            rounded
+          >
+            Ask AI
+          </Button>
+        </div>
+
+        {/* Fullscreen overlay + chat panel */}
+        {isMobileChatOpen && (
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+              onClick={() => setIsMobileChatOpen(false)}
+            />
+            <div className="relative z-10">
+              <Button
+                type="button"
+                onClick={() => setIsMobileChatOpen(false)}
+                className="absolute -top-3 -right-3 z-30"
+                variant="ternary"
+                rounded
+              >
+                <CgCloseO />
+              </Button>
+
+              <Chat />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

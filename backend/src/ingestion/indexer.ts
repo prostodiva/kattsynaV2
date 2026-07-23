@@ -18,6 +18,10 @@ export async function indexPage(url: string) {
 
     console.log("RAW TEXT LENGTH:", rawText.length);
 
+    // Clean re-index: drop any prior chunks for this URL so stale chunks
+    // don't linger when a page's text shrinks between runs.
+    await collection.delete({ where: { url } });
+
     const chunks = await semanticChunkText(rawText);
 
     console.log("CHUNKS COUNT:", chunks.length);
@@ -31,7 +35,7 @@ export async function indexPage(url: string) {
 
         const embedding = await embedText(chunk);
 
-        await collection.add({
+        await collection.upsert({
             ids: [`${url}-chunk-${i}`],
             documents: [chunk],
             embeddings: [embedding],
@@ -44,5 +48,5 @@ export async function indexPage(url: string) {
         });
     }
 
-    console.log("INDEXING COMPLETE");
+    console.log(`INDEXING COMPLETE: ${url}`);
 }
