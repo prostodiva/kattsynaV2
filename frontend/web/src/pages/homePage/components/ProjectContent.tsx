@@ -1,3 +1,4 @@
+import Button from '@/components/ui/Button';
 import Projects from './Projects';
 
 function ProjectContent() {
@@ -10,11 +11,11 @@ function ProjectContent() {
 
         <Projects />
 
-        {/*<div className="flex items-center justify-center mt-5">
-            <Button variant="secondary" rounded className="w-full md:w-auto">
-              Explore Projects
-            </Button>
-          </div>*/}
+        <div className="flex items-center justify-center mt-5">
+          <Button variant="secondary" rounded className="w-full md:w-auto">
+            Explore Projects
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ function Projects() {
   const { scrollRef, onPointerDown, onPointerMove, onPointerUp } = useDragScroll();
   const [activeIndex, setActiveIndex] = useState(offset);
   const initialized = useRef(false);
+  const settleTimer = useRef<number | null>(null);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -47,6 +48,20 @@ function Projects() {
     setActiveIndex(idx);
   };
 
+  // `scrollend` is unreliable on mobile (iOS added it only recently), so
+  // debounce the raw scroll event to detect when scrolling has settled.
+  const onScroll = () => {
+    if (settleTimer.current !== null) clearTimeout(settleTimer.current);
+    settleTimer.current = window.setTimeout(handleScrollEnd, 100);
+  };
+
+  useEffect(
+    () => () => {
+      if (settleTimer.current !== null) clearTimeout(settleTimer.current);
+    },
+    []
+  );
+
   return (
     <div className="w-full overflow-hidden" style={{ perspective: '1200px' }}>
       <div
@@ -55,7 +70,7 @@ function Projects() {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
-        onScrollEnd={handleScrollEnd}
+        onScroll={onScroll}
         className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 cursor-grab select-none"
       >
         {looped.map((p, i) => (
