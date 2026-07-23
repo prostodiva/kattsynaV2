@@ -85,13 +85,24 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
         // 2. Retrieve the top matching chunks from Vectorize.
         const results = await env.VECTORIZE.query(queryVector, {
-          topK: 3,
+          topK: 6,
           returnMetadata: 'all',
         });
         const matches = results.matches ?? [];
         const chunks = matches
           .map((m) => String(m.metadata?.text ?? ''))
           .filter(Boolean);
+
+        // Diagnostic: what did retrieval actually return? (visible in `wrangler pages deployment tail`)
+        console.log(
+          '[/api/chat] query=%s matches=%o',
+          message,
+          matches.map((m) => ({
+            score: m.score,
+            url: m.metadata?.url,
+            textLen: String(m.metadata?.text ?? '').length,
+          }))
+        );
 
         const seen = new Set<string>();
         const sources: Source[] = [];

@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { writeFile } from "node:fs/promises";
 import { indexPage, type VectorRecord } from "../ingestion/indexer.js";
 
