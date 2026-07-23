@@ -7,6 +7,9 @@ function useDragScroll() {
   const scrollStart = useRef(0);
 
   const onPointerDown = (e: React.PointerEvent) => {
+    // Touch/pen use the browser's native scroll (momentum + snap). Only take
+    // over for mouse, where click-drag is the intended "grab" affordance.
+    if (e.pointerType !== 'mouse') return;
     const el = scrollRef.current;
     if (!el) return;
     isDragging.current = true;
@@ -24,7 +27,8 @@ function useDragScroll() {
 
   const onPointerUp = (e: React.PointerEvent) => {
     const el = scrollRef.current;
-    if (!el) return;
+    // Ignore touch/pen (never captured) so releasePointerCapture can't throw.
+    if (!el || !isDragging.current) return;
     isDragging.current = false;
     el.style.cursor = 'grab';
     el.style.scrollSnapType = 'x mandatory';

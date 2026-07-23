@@ -6,14 +6,16 @@
  * Requires CF_ACCOUNT_ID and CF_API_TOKEN (see backend/.env.example).
  */
 
-const ACCOUNT_ID = process.env.CF_ACCOUNT_ID;
-const API_TOKEN = process.env.CF_API_TOKEN;
+const ACCOUNT_ID =
+    process.env.CLOUDFLARE_ACCOUNT_ID ?? process.env.CF_ACCOUNT_ID;
+const API_TOKEN =
+    process.env.CLOUDFLARE_API_TOKEN ?? process.env.CF_API_TOKEN;
 const MODEL = "@cf/baai/bge-base-en-v1.5";
 
 export async function embedText(text: string): Promise<number[]> {
     if (!ACCOUNT_ID || !API_TOKEN) {
         throw new Error(
-            "CF_ACCOUNT_ID and CF_API_TOKEN must be set to run ingestion."
+            "CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN must be set to run ingestion."
         );
     }
 
