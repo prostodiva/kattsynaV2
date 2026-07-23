@@ -1,0 +1,15 @@
+# Cloudflare Pages config for the portfolio (static site + /api/* Functions).
+# Bindings can also be set in the Pages dashboard; this file keeps them in code.
+name = "kattsyna-portfolio"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
+
+# Workers AI (LLM + embeddings) — free daily allocation.
+[ai]
+binding = "AI"
+
+# Vectorize index holding the portfolio chunk embeddings (768-dim, cosine).
+# Create once: wrangler vectorize create portfolio --dimensions=768 --metric=cosine
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "portfolio"

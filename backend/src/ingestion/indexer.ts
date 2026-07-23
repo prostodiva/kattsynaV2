@@ -1,31 +1,36 @@
 /*
-*
-* fetch page text
-* chunk text
-* generate embeddings
-* store in Chroma
-*
-*/
+ *
+ * fetch page text -> semantic chunk -> embed (Workers AI) -> Vectorize records
+ *
+ * Returns records instead of writing to a DB. run-ingestion.ts collects them
+ * and writes an NDJSON that is loaded with `wrangler vectorize insert`.
+ *
+ */
 
 import { semanticChunkText } from "../ingestion/chunker.js";
 import { embedText } from "../services/embedding.service.js";
-import { getCollection } from "../db/chroma.js";
 import { fetchPageText } from "./fetchPage.js";
 
-export async function indexPage(url: string) {
-    const collection = await getCollection();
+export interface VectorRecord {
+    id: string;
+    values: number[];
+    metadata: {
+        url: string;
+        text: string;
+        chunkIndex: number;
+    };
+}
+
+export async function indexPage(url: string): Promise<VectorRecord[]> {
     const rawText = await fetchPageText(url);
 
     console.log("RAW TEXT LENGTH:", rawText.length);
 
-    // Clean re-index: drop any prior chunks for this URL so stale chunks
-    // don't linger when a page's text shrinks between runs.
-    await collection.delete({ where: { url } });
-
     const chunks = await semanticChunkText(rawText);
 
     console.log("CHUNKS COUNT:", chunks.length);
-    console.log("FIRST CHUNK SAMPLE:", chunks[0]);
+
+    const records: VectorRecord[] = [];
 
     for (let i = 0; i < chunks.length; i++) {
         const chunk = chunks[i];
@@ -33,20 +38,20 @@ export async function indexPage(url: string) {
         if (!chunk) continue;
         if (chunk.length < 30) continue;
 
-        const embedding = await embedText(chunk);
+        const values = await embedText(chunk);
 
-        await collection.upsert({
-            ids: [`${url}-chunk-${i}`],
-            documents: [chunk],
-            embeddings: [embedding],
-            metadatas: [
-                {
-                    url,
-                    chunkIndex: i,
-                },
-            ],
+        records.push({
+            id: `${url}-chunk-${i}`,
+            values,
+            metadata: {
+                url,
+                text: chunk,
+                chunkIndex: i,
+            },
         });
     }
 
-    console.log(`INDEXING COMPLETE: ${url}`);
+    console.log(`INDEXED ${records.length} chunks: ${url}`);
+
+    return records;
 }
