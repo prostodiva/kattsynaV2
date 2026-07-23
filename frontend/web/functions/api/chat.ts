@@ -14,7 +14,7 @@ interface Env {
 }
 
 const EMBED_MODEL = '@cf/baai/bge-base-en-v1.5';
-const LLM_MODEL = '@cf/meta/llama-3.1-8b-instruct';
+const LLM_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
 
 interface Source {
   url: string;
