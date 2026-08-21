@@ -6,9 +6,9 @@ import P_2_active from '@/assets/projects/P_2_active.webp'
 import P_3_active from '@/assets/projects/P_3_active.webp'
 
 export const projects = [
-    { title: "", src: P_1, srcActive: P_1_active, url: "" },
-    { title: "", src: P_2, srcActive: P_2_active, url: "" },
-    { title: "", src: P_3, srcActive: P_3_active, url: "" },
+    { title: "Eurika", src: P_1, srcActive: P_1_active, url: "https://eu-rika.com" },
+    { title: "Dev-Briefs", src: P_2, srcActive: P_2_active, url: "https://dev-briefs.com" },
+    { title: "NFL Vacation", src: P_3, srcActive: P_3_active, url: "https://nfl-vacation.pages.dev" },
 ]
 
 export const cards = [

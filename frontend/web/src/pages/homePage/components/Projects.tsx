@@ -9,7 +9,8 @@ const looped = [...projects, ...projects, ...projects];
 const offset = projects.length * CLONES;
 
 function Projects() {
-  const { scrollRef, onPointerDown, onPointerMove, onPointerUp } = useDragScroll();
+  const { scrollRef, onPointerDown, onPointerMove, onPointerUp, onClickCapture } =
+    useDragScroll();
   const [activeIndex, setActiveIndex] = useState(offset);
   const initialized = useRef(false);
   const settleTimer = useRef<number | null>(null);
@@ -70,6 +71,7 @@ function Projects() {
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
+        onClickCapture={onClickCapture}
         onScroll={onScroll}
         className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 cursor-grab select-none"
       >
@@ -79,7 +81,9 @@ function Projects() {
             className="snap-center shrink-0 w-[85vw] md:w-[70vw] xl:w-[50%] transition-all duration-300"
             style={{
               ...getCardStyle(i - activeIndex),
-              pointerEvents: 'none',
+              // Only the centered card takes clicks; the rest stay inert so
+              // dragging across them never opens a link.
+              pointerEvents: i === activeIndex ? 'auto' : 'none',
             }}
           >
             <ProjectCard {...p} isActive={i === activeIndex} />
