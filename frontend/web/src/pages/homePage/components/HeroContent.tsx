@@ -13,7 +13,12 @@ function HeroContent() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
       {/*Left side*/}
-      <div className="relative items-end justify-center overflow-hidden min-h-screen lg:min-h-dvh ">
+      {/* From lg up the copy is centred by flex rather than pinned to a
+          percentage of the viewport height: the old `top-[75%]` + translate
+          pushed the block's lower half (and the CTA with it) past the fold on
+          any viewport shorter than ~1174px. In flow the column grows instead
+          of clipping. */}
+      <div className="relative overflow-hidden min-h-screen lg:min-h-dvh lg:flex lg:flex-col lg:justify-center">
         <picture className="absolute inset-0 w-full h-full">
           <source media="(min-width: 768px)" srcSet={left_cover_desktop} />
           <img
@@ -23,7 +28,9 @@ function HeroContent() {
           />
         </picture>
 
-        <div className="relative z-10 px-5 md:px-8 pt-24 pb-20 lg:absolute lg:top-[26%] xl:top-[75%] xl:-translate-y-1/2">
+        {/* pt keeps the heading clear of the absolutely positioned header,
+            which grows to h-24 at 2xl. */}
+        <div className="relative z-10 px-5 md:px-8 pt-24 pb-20 2xl:pt-32">
           <h1>
             <span className="font-unitea font-bold block text-5xl md:text-7xl 2xl:text-9xl leading-none">
               Reliable <br className="md:hidden" />

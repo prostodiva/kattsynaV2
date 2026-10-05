@@ -10,8 +10,7 @@ import { resultsContent } from './resultsContent';
  * handled with Tailwind (xl / 2xl), not separate component trees.
  */
 function CarouselResults() {
-  const { scrollRef, onPointerDown, onPointerMove, onPointerUp } =
-    useDragScroll();
+  const { scrollRef, onPointerDown, onDragStart } = useDragScroll();
 
   return (
     <div className="flex w-full flex-col gap-8 px-8 py-16 xl:gap-10 xl:px-10 2xl:gap-16 2xl:py-24 2xl:px-16">
@@ -27,9 +26,7 @@ function CarouselResults() {
       <div
         ref={scrollRef}
         onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
+        onDragStart={onDragStart}
         className="flex snap-x snap-mandatory cursor-grab select-none gap-5 overflow-x-auto scrollbar-hide 2xl:gap-8"
       >
         {cards.map(({ title, text }) => (

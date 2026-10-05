@@ -21,15 +21,36 @@ interface Source {
   title: string;
 }
 
-function titleFromUrl(u: string): string {
+const PAGE_TITLES: Record<string, string> = {
+  '/': 'Home',
+  '/experience': 'Experience',
+  '/skills': 'Skills',
+  '/about': 'About me',
+};
+
+/**
+ * Vectorize stores the absolute URL each chunk was crawled from, which pins the
+ * origin used at ingestion time (e.g. the *.pages.dev deployment). Sources are
+ * always pages of this very site, so emit the route instead and let the client
+ * resolve it against whatever origin the visitor is actually on.
+ */
+function toSitePath(raw: string): string | null {
   try {
-    const path = new URL(u).pathname.replace(/\/$/, '');
-    if (path === '') return 'Home';
-    const seg = path.split('/').filter(Boolean).pop() ?? 'Home';
-    return seg.charAt(0).toUpperCase() + seg.slice(1);
+    const path = new URL(raw, 'https://placeholder.invalid').pathname.replace(
+      /\/+$/,
+      ''
+    );
+    return path === '' ? '/' : path;
   } catch {
-    return u;
+    return null;
   }
+}
+
+function titleFromPath(path: string): string {
+  const known = PAGE_TITLES[path];
+  if (known) return known;
+  const seg = path.split('/').filter(Boolean).pop() ?? 'Home';
+  return seg.charAt(0).toUpperCase() + seg.slice(1);
 }
 
 function buildPrompt(query: string, chunks: string[]): string {
@@ -107,10 +128,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         const seen = new Set<string>();
         const sources: Source[] = [];
         for (const m of matches) {
-          const url = String(m.metadata?.url ?? '');
-          if (!url || seen.has(url)) continue;
-          seen.add(url);
-          sources.push({ url, title: titleFromUrl(url) });
+          const path = toSitePath(String(m.metadata?.url ?? ''));
+          if (!path || seen.has(path)) continue;
+          seen.add(path);
+          sources.push({ url: path, title: titleFromPath(path) });
         }
         send({ type: 'sources', sources });
 

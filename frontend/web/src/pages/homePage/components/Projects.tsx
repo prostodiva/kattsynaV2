@@ -9,7 +9,7 @@ const looped = [...projects, ...projects, ...projects];
 const offset = projects.length * CLONES;
 
 function Projects() {
-  const { scrollRef, onPointerDown, onPointerMove, onPointerUp, onClickCapture } =
+  const { scrollRef, onPointerDown, onDragStart, onClickCapture } =
     useDragScroll();
   const [activeIndex, setActiveIndex] = useState(offset);
   const initialized = useRef(false);
@@ -68,9 +68,7 @@ function Projects() {
       <div
         ref={scrollRef}
         onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
+        onDragStart={onDragStart}
         onClickCapture={onClickCapture}
         onScroll={onScroll}
         className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 cursor-grab select-none"
