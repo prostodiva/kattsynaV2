@@ -13,12 +13,13 @@ function HeroContent() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
       {/*Left side*/}
-      {/* From lg up the copy is centred by flex rather than pinned to a
-          percentage of the viewport height: the old `top-[75%]` + translate
-          pushed the block's lower half (and the CTA with it) past the fold on
-          any viewport shorter than ~1174px. In flow the column grows instead
-          of clipping. */}
-      <div className="relative overflow-hidden min-h-screen lg:min-h-dvh lg:flex lg:flex-col lg:justify-center">
+      {/* From lg up the copy sits low in the hero, anchored to the bottom of
+          the column by flex rather than pinned to a percentage of the viewport
+          height. The old `top-[75%]` + translate took the block out of flow, so
+          its lower half (and the CTA with it) fell past the fold on any
+          viewport shorter than ~1174px; bottom-aligned and in flow, the block's
+          own pb-20 sets the gap and the column grows instead of clipping. */}
+      <div className="relative overflow-hidden min-h-screen lg:min-h-dvh lg:flex lg:flex-col lg:justify-end">
         <picture className="absolute inset-0 w-full h-full">
           <source media="(min-width: 768px)" srcSet={left_cover_desktop} />
           <img
