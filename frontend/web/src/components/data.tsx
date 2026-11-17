@@ -10,7 +10,7 @@ export const projects = [
     { title: "Eurika", src: P_1, srcActive: P_1_active, url: "https://eu-rika.com" },
     { title: "Dev-Briefs", src: P_2, srcActive: P_2_active, url: "https://dev-briefs.com" },
   { title: "NFL Vacation", src: P_3, srcActive: P_3_active, url: "https://nfl-vacation.pages.dev" },
-    {title: "Turtles Vs. Plastic", src: P_4, srcActive: P_4, url: "animals-vs-plastic.kattsyna.workers.dev"}
+    {title: "Turtles Vs. Plastic", src: P_4, srcActive: P_4, url: "https://animals-vs-plastic.kattsyna.workers.dev"}
 ]
 
 export const cards = [
