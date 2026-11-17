@@ -4,11 +4,13 @@ import P_3 from '@/assets/projects/P_3.webp'
 import P_1_active from '@/assets/projects/P_1_active.webp'
 import P_2_active from '@/assets/projects/P_2_active.webp'
 import P_3_active from '@/assets/projects/P_3_active.webp'
+import P_4 from '@/assets/projects/P_4.webp'
 
 export const projects = [
     { title: "Eurika", src: P_1, srcActive: P_1_active, url: "https://eu-rika.com" },
     { title: "Dev-Briefs", src: P_2, srcActive: P_2_active, url: "https://dev-briefs.com" },
-    { title: "NFL Vacation", src: P_3, srcActive: P_3_active, url: "https://nfl-vacation.pages.dev" },
+  { title: "NFL Vacation", src: P_3, srcActive: P_3_active, url: "https://nfl-vacation.pages.dev" },
+    {title: "Turtles Vs. Plastic", src: P_4, srcActive: P_4, url: "animals-vs-plastic.kattsyna.workers.dev"}
 ]
 
 export const cards = [
